@@ -202,7 +202,7 @@ body{
 .card__scrim{position:absolute;inset:0;background:rgba(0,0,0,.40);pointer-events:none}
 /* photo slowly grows 15% once the card scrolls into view, then holds */
 .reveal.is-in .card__photo{transform:scale(1);transition:none}
-.card__photo.zoom-in{transform:scale(1.15);transition:transform 6s var(--ease-out)}
+.card__photo.zoom-in{transform:scale(1.20);transition:transform 3s var(--ease-out)}
 .card__art{
   position:absolute;top:40px;right:18px;width:140px;height:150px;
   color:#fff;opacity:.38;pointer-events:none;
@@ -655,7 +655,7 @@ body{
       entries.forEach(function(e){
         if(e.isIntersecting){ photo.classList.add('zoom-in'); photoIo.unobserve(photo); }
       });
-    }, {root:scroller, threshold:0.30});
+    }, {root:scroller, threshold:0.40});
     photoIo.observe(photo.closest('.card'));
   }
 
