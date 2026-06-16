@@ -83,13 +83,24 @@ body{
   padding:130px 10px 56px;
   text-align:center;
 }
+@keyframes hero-fade{
+  from{opacity:0;transform:translateY(18px)}
+  to  {opacity:1;transform:none}
+}
 .hero h1{
   font-family:var(--display);font-weight:300;font-size:32px;line-height:1.4;
   margin:0 0 20px; max-width:293px;
+  opacity:0;
+  animation:hero-fade .9s cubic-bezier(.23,1,.32,1) .2s 1 forwards;
 }
 .hero p{
   font-size:16px;line-height:1.5;margin:0;max-width:313px;
   color:rgba(255,255,255,.92);
+  opacity:0;
+  animation:hero-fade .9s cubic-bezier(.23,1,.32,1) .45s 1 forwards;
+}
+@media (prefers-reduced-motion:reduce){
+  .hero h1,.hero p{opacity:1;animation:none}
 }
 
 /* ───────────────────────── sticky filters ───────────────────────── */
