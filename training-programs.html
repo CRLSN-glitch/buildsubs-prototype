@@ -125,26 +125,44 @@ body{
   cursor:pointer;white-space:nowrap;
   transition:transform .14s var(--ease-out),background-color .2s ease,color .2s ease,border-color .2s ease;
 }
-/* sweep — clip-path keeps it in bounds without clipping dropdown children */
-.filters{position:relative}
-.filters__row{position:relative}
-.filters::after{
+@keyframes row-sweep{
+  0%  {transform:translateX(-180%);opacity:0}
+  15% {opacity:1}
+  85% {opacity:1}
+  100%{transform:translateX(180%);opacity:0}
+}
+.pill{
+  display:flex;align-items:center;gap:8px;
+  height:37px;padding:11px 14px 11px 16px;
+  border:1px solid #fff;border-radius:70px;background:transparent;
+  color:#fff;font-family:var(--body);font-size:10px;line-height:1.5;
+  cursor:pointer;white-space:nowrap;
+  position:relative;overflow:hidden;
+  transition:transform .14s var(--ease-out),background-color .2s ease,color .2s ease,border-color .2s ease;
+}
+/* shimmer beam clipped to each pill's rounded shape */
+.pill::after{
   content:"";
-  position:absolute;top:0;left:0;right:0;bottom:0;
-  width:50%;
+  position:absolute;inset:0;
+  width:60%;
   background:linear-gradient(90deg,
     transparent 0%,
-    rgba(63,204,202,.18) 40%,
-    rgba(63,204,202,.38) 50%,
-    rgba(63,204,202,.18) 60%,
+    rgba(255,255,255,.12) 30%,
+    rgba(63,204,202,.55) 50%,
+    rgba(255,255,255,.12) 70%,
     transparent 100%);
   pointer-events:none;
-  clip-path:inset(0);
-  transform:translateX(-100%);
-  animation:row-sweep 1.8s ease-in-out 1.5s 1 both;
-  z-index:1;
+  transform:translateX(-180%);
+  animation:row-sweep 1s ease-in-out 1 both;
 }
-.filters.is-stuck::after{display:none}
+/* first pill fires at 1.5s, second pill fires 0.25s later */
+.combo:nth-child(2) .pill::after{ animation-delay:1.5s }
+.combo:nth-child(3) .pill::after{ animation-delay:1.75s }
+/* suppress on locked white bar */
+.filters.is-stuck .pill::after{display:none}
+/* suppress per-pill sweep — container sweep gone */
+.filters::after{display:none}
+
 .pill svg{transition:transform .2s var(--ease-out)}
 
 /* ── filter combo boxes ── */
@@ -337,6 +355,7 @@ body{
 @media (prefers-reduced-motion:reduce){
   .js .reveal{opacity:1;transform:none;transition:opacity .25s ease}
   .pill,.cta,.more,.tile{transition:none;animation:none}
+  .pill::after{display:none}
   .filters::after{display:none}
   .reveal.is-in .card__photo{transform:none;transition:none}
   .card__photo.zoom-in{transform:none;transition:none}
