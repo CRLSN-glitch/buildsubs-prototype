@@ -201,7 +201,8 @@ body{
 }
 .card__scrim{position:absolute;inset:0;background:rgba(0,0,0,.40);pointer-events:none}
 /* photo slowly grows 15% once the card scrolls into view, then holds */
-.reveal.is-in .card__photo{transform:scale(1.15);transition:transform 6s var(--ease-out)}
+.reveal.is-in .card__photo{transform:scale(1);transition:none}
+.card__photo.zoom-in{transform:scale(1.15);transition:transform 6s var(--ease-out)}
 .card__art{
   position:absolute;top:40px;right:18px;width:140px;height:150px;
   color:#fff;opacity:.38;pointer-events:none;
@@ -310,6 +311,7 @@ body{
   .js .reveal{opacity:1;transform:none;transition:opacity .25s ease}
   .pill,.cta,.more,.tile{transition:none}
   .reveal.is-in .card__photo{transform:none;transition:none}
+  .card__photo.zoom-in{transform:none;transition:none}
 }
 </style>
 
@@ -646,6 +648,17 @@ body{
     });
   }, {root:scroller, threshold:0, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* photo zoom fires separately once the ATDM card is 30% into the viewport */
+  var photo = document.querySelector('.card__photo');
+  if(photo){
+    var photoIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ photo.classList.add('zoom-in'); photoIo.unobserve(photo); }
+      });
+    }, {root:scroller, threshold:0.30});
+    photoIo.observe(photo.closest('.card'));
+  }
 
   /* 3 ─ "More" vertically expands the card to reveal the rest + tags */
   document.querySelectorAll('.card').forEach(function(card){
