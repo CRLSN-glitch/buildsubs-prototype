@@ -244,7 +244,7 @@ body{
   padding:18px 21px 20px;
   background:var(--teal-deep);
   color:#fff;
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;justify-content:center;
   overflow:hidden;
 }
 .card__head--featured{background:#002d3e}
@@ -266,15 +266,15 @@ body{
 
 .card__eyebrow{
   font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:2.4px;
-  text-transform:uppercase;margin:0;position:relative;z-index:1;
+  text-transform:uppercase;margin:0 0 auto;position:relative;z-index:1;
 }
-.card__titles{margin-top:auto;position:relative;z-index:1}
+.card__titles{position:relative;z-index:1}
 .card__title{
   font-family:var(--display);font-weight:400;font-size:32px;line-height:1.1;letter-spacing:-0.02em;margin:0;
 }
 .card__subtitle{font-weight:500;font-size:12px;line-height:1.3;margin:2px 0 0}
 .card__loc{
-  display:flex;align-items:center;gap:8px;margin-top:16px;
+  display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;
   font-weight:500;font-size:12px;line-height:1.5;position:relative;z-index:1;
 }
 .card__loc svg{width:15px;height:15px;flex:none}
