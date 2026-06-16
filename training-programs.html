@@ -111,6 +111,10 @@ body{
   transition:color .2s ease;
 }
 .filters__row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+@keyframes pill-shimmer{
+  0%,100%{border-color:#fff;color:#fff;box-shadow:none}
+  50%{border-color:var(--teal-wave);color:var(--teal-wave);box-shadow:0 0 10px rgba(63,204,202,.45)}
+}
 .pill{
   display:flex;align-items:center;gap:8px;
   height:37px;padding:11px 14px 11px 16px;
@@ -118,7 +122,9 @@ body{
   color:#fff;font-family:var(--body);font-size:10px;line-height:1.5;
   cursor:pointer;white-space:nowrap;
   transition:transform .14s var(--ease-out),background-color .2s ease,color .2s ease,border-color .2s ease;
+  animation:pill-shimmer .5s ease-in-out 1.5s 1 both;
 }
+.filters.is-stuck .pill{animation:none}
 .pill svg{transition:transform .2s var(--ease-out)}
 
 /* ── filter combo boxes ── */
@@ -310,7 +316,7 @@ body{
 
 @media (prefers-reduced-motion:reduce){
   .js .reveal{opacity:1;transform:none;transition:opacity .25s ease}
-  .pill,.cta,.more,.tile{transition:none}
+  .pill,.cta,.more,.tile{transition:none;animation:none}
   .reveal.is-in .card__photo{transform:none;transition:none}
   .card__photo.zoom-in{transform:none;transition:none}
 }
