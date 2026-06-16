@@ -111,9 +111,11 @@ body{
   transition:color .2s ease;
 }
 .filters__row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
-@keyframes pill-shimmer{
-  0%,100%{border-color:#fff;color:#fff;box-shadow:none}
-  50%{border-color:var(--teal-wave);color:var(--teal-wave);box-shadow:0 0 10px rgba(63,204,202,.45)}
+@keyframes row-sweep{
+  0%  {transform:translateX(-100%);opacity:0}
+  10% {opacity:1}
+  90% {opacity:1}
+  100%{transform:translateX(200%);opacity:0}
 }
 .pill{
   display:flex;align-items:center;gap:8px;
@@ -122,9 +124,27 @@ body{
   color:#fff;font-family:var(--body);font-size:10px;line-height:1.5;
   cursor:pointer;white-space:nowrap;
   transition:transform .14s var(--ease-out),background-color .2s ease,color .2s ease,border-color .2s ease;
-  animation:pill-shimmer .5s ease-in-out 1.5s 1 both;
 }
-.filters.is-stuck .pill{animation:none}
+/* sweep — clip-path keeps it in bounds without clipping dropdown children */
+.filters{position:relative}
+.filters__row{position:relative}
+.filters::after{
+  content:"";
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  width:50%;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(63,204,202,.18) 40%,
+    rgba(63,204,202,.38) 50%,
+    rgba(63,204,202,.18) 60%,
+    transparent 100%);
+  pointer-events:none;
+  clip-path:inset(0);
+  transform:translateX(-100%);
+  animation:row-sweep 1.8s ease-in-out 1.5s 1 both;
+  z-index:1;
+}
+.filters.is-stuck::after{display:none}
 .pill svg{transition:transform .2s var(--ease-out)}
 
 /* ── filter combo boxes ── */
@@ -317,6 +337,7 @@ body{
 @media (prefers-reduced-motion:reduce){
   .js .reveal{opacity:1;transform:none;transition:opacity .25s ease}
   .pill,.cta,.more,.tile{transition:none;animation:none}
+  .filters::after{display:none}
   .reveal.is-in .card__photo{transform:none;transition:none}
   .card__photo.zoom-in{transform:none;transition:none}
 }
