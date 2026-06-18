@@ -391,7 +391,12 @@ body{
   margin:0 0 24px;padding:0 23px;
   position:relative;z-index:1;
 }
-.cp-heading__light{font-weight:300;color:#fff;opacity:.55}
+.cp-heading__notsure{
+  display:block;
+  font-family:var(--display);font-weight:300;font-size:32px;line-height:1.1;
+  letter-spacing:-0.02em;text-transform:uppercase;
+  color:var(--shadow);margin:0 0 4px;
+}
 .cp-heading__teal{font-weight:600;color:var(--teal-wave)}
 .cp-carousel{
   display:flex;gap:10px;
@@ -723,7 +728,8 @@ body{
       <div class="cp-card">
         <div class="cp-bg" aria-hidden="true"></div>
         <h2 class="cp-heading">
-          <span class="cp-heading__light">Not sure? </span><span class="cp-heading__teal">Explore the Career Paths</span>
+          <span class="cp-heading__notsure">Not sure?</span>
+          <span class="cp-heading__teal">Explore the Career Paths</span>
         </h2>
         <div class="cp-carousel">
           <div class="cp-tile"><span class="cp-tile__label">Additive Manufacturing</span><div class="cp-tile__bar"></div></div>
