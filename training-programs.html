@@ -709,20 +709,31 @@ body{
       </div>
     </article>
 
-    <!-- 5 · career paths panel -->
-    <section class="paths reveal">
-      <h2>Not sure? Explore the Career Paths</h2>
-      <div class="paths__row">
-        <button class="tile"><p>Additive Manufacturing</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>CNC Machining</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Metrology</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Welding</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Planning</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Design</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Non-Destructive Testing</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tile"><p>Engineering</p><svg class="arrow" viewBox="0 0 21 21" fill="none"><path d="M5 16L16 5M16 5H7M16 5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <!-- career paths card -->
+    <article class="card reveal" id="career-paths-card">
+      <div class="cp-card">
+        <div class="cp-bg" aria-hidden="true"></div>
+        <h2 class="cp-heading">
+          <span class="cp-heading__notsure">Not sure?</span>
+          <span class="cp-heading__teal">Explore the Career Paths</span>
+        </h2>
+        <div class="cp-carousel">
+          <div class="cp-tile"><span class="cp-tile__label">Additive Manufacturing</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Blasting and Spraying</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">CNC Machining</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Designing</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Engineering</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Metrology</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Non-Destructive Testing</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Planning</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Quality Assurance</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Robotics / Automation</span><div class="cp-tile__bar"></div></div>
+          <div class="cp-tile"><span class="cp-tile__label">Welding</span><div class="cp-tile__bar"></div></div>
+        </div>
       </div>
-    </section>
+    </article>
+
+
 
     <!-- 6 · Thaddeus Stevens -->
     <article class="card reveal" data-focus="Industrial Maintenance" data-state="Pennsylvania">
@@ -752,30 +763,6 @@ body{
     </article>
 
     <p class="cards__empty" hidden>No programs match these filters yet. Try clearing a filter.</p>
-    <!-- career paths card -->
-    <article class="card reveal" id="career-paths-card">
-      <div class="cp-card">
-        <div class="cp-bg" aria-hidden="true"></div>
-        <h2 class="cp-heading">
-          <span class="cp-heading__notsure">Not sure?</span>
-          <span class="cp-heading__teal">Explore the Career Paths</span>
-        </h2>
-        <div class="cp-carousel">
-          <div class="cp-tile"><span class="cp-tile__label">Additive Manufacturing</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Blasting and Spraying</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">CNC Machining</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Designing</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Engineering</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Metrology</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Non-Destructive Testing</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Planning</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Quality Assurance</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Robotics / Automation</span><div class="cp-tile__bar"></div></div>
-          <div class="cp-tile"><span class="cp-tile__label">Welding</span><div class="cp-tile__bar"></div></div>
-        </div>
-      </div>
-    </article>
-
     <!-- expedited programs card -->
     <article class="card reveal" id="expedited-card">
       <div class="exp-card">
