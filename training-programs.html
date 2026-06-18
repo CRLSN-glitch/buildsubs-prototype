@@ -427,6 +427,35 @@ body{
   background:var(--teal-wave);
   border-radius:0 0 4px 4px;
 }
+
+/* ── expedited programs card ── */
+#expedited-card{width:calc(100% - 20px)}
+.exp-card{
+  position:relative;overflow:hidden;
+  background:#fafafa;border-radius:8px;
+  padding:0;
+  min-height:340px;
+  display:flex;align-items:center;justify-content:center;
+}
+.exp-deco{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;
+}
+.exp-content{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:40px 23px 48px;gap:16px;
+}
+.exp-heading{
+  font-family:var(--display);font-weight:300;font-size:32px;
+  line-height:1.1;letter-spacing:-0.02em;text-transform:uppercase;
+  color:var(--shadow);margin:0;max-width:320px;
+}
+.exp-sub{
+  font-family:var(--display);font-weight:400;font-size:18px;
+  line-height:1.4;color:var(--shadow);margin:0;
+}
+.exp-cta{width:264px;margin-top:8px}
 </style>
 
 <div class="app">
@@ -743,6 +772,32 @@ body{
           <div class="cp-tile"><span class="cp-tile__label">Quality Assurance</span><div class="cp-tile__bar"></div></div>
           <div class="cp-tile"><span class="cp-tile__label">Robotics / Automation</span><div class="cp-tile__bar"></div></div>
           <div class="cp-tile"><span class="cp-tile__label">Welding</span><div class="cp-tile__bar"></div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- expedited programs card -->
+    <article class="card reveal" id="expedited-card">
+      <div class="exp-card">
+        <!-- decorative marks -->
+        <svg class="exp-deco" viewBox="0 0 393 340" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+          <!-- diagonal line bottom-left -->
+          <line x1="-17" y1="339" x2="319" y2="258" stroke="#c8cbcf" stroke-width="0.4"/>
+          <!-- horizontal line mid -->
+          <line x1="-182" y1="191" x2="391" y2="191" stroke="#c8cbcf" stroke-width="0.4"/>
+          <!-- vertical dashed line right -->
+          <line x1="354" y1="-30" x2="354" y2="378" stroke="#c8cbcf" stroke-width="0.6" stroke-dasharray="4 4"/>
+          <!-- circle bottom right -->
+          <circle cx="323" cy="306" r="18" stroke="#c8cbcf" stroke-width="0.8"/>
+          <!-- crosshair top right -->
+          <circle cx="342" cy="52" r="6" stroke="#c8cbcf" stroke-width="0.7"/>
+          <line x1="342" y1="44" x2="342" y2="60" stroke="#c8cbcf" stroke-width="0.7"/>
+          <line x1="334" y1="52" x2="350" y2="52" stroke="#c8cbcf" stroke-width="0.7"/>
+        </svg>
+        <div class="exp-content">
+          <h2 class="exp-heading">Looking to get trained fast?</h2>
+          <p class="exp-sub">There's a program for that.</p>
+          <button class="cta exp-cta">See Expedited Programs</button>
         </div>
       </div>
     </article>
