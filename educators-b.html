@@ -656,9 +656,13 @@ html.dc-gated #dc-gate{display:flex}
 .t5__grid{
   padding:clamp(2.5rem,5vw,4rem) var(--gut) 0;
   display:grid;gap:clamp(1.1rem,2.2vw,1.75rem);
-  grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));
+  /* explicit 3-up so every card in the row shares the same width, rather
+     than auto-fit's column count shifting with content */
+  grid-template-columns:repeat(3,minmax(0,1fr));
   align-items:start;   /* cards size to their content rather than leaving hollow columns */
 }
+@media (max-width:900px){.t5__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.t5__grid{grid-template-columns:1fr}}
 .rel{
   display:flex;flex-direction:column;gap:.8rem;
   padding:1.4rem 1.4rem 1.15rem;background:#ffffff0d;
@@ -669,12 +673,8 @@ html.dc-gated #dc-gate{display:flex}
 .rel__art{margin:-1.4rem -1.4rem .3rem;aspect-ratio:16/9;overflow:hidden;background:#ffffff0f}
 .rel__art img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.23,1,.32,1)}
 .rel:hover .rel__art img{transform:scale(1.04)}
-.rel--wide .rel__art{aspect-ratio:21/9}
 .rel__t{font-family:var(--font-display);font-weight:400;font-size:1.3125rem;line-height:1.1;letter-spacing:-.014em}
 .rel__d{font-size:.8125rem;line-height:1.55;font-weight:300;color:#ffffffb0;flex:1}
-.rel--wide{grid-column:span 2}
-.rel--wide .rel__t{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:300}
-@media (max-width:760px){.rel--wide{grid-column:span 1}}
 /* closing CTA */
 .cta{
   margin:clamp(3rem,6vw,5rem) var(--gut) 0;
@@ -1303,7 +1303,7 @@ html.dc-gated #dc-gate{display:flex}
 
   <div class="t5__grid">
 
-    <article class="rel rel--wide">
+    <article class="rel">
       <div class="rel__art"><img src="educators-assets/cef8e09b-e1a4-4864-bd4c-9854def13efb.png" alt="Shop floor at a submarine industrial base facility" loading="lazy"></div>
       <div class="badges"><span class="badge badge--partner">Scheduled &middot; people</span></div>
       <h3 class="rel__t">Guest speaker panels &amp; career fairs</h3>
@@ -1321,6 +1321,7 @@ html.dc-gated #dc-gate{display:flex}
     </article>
 
     <article class="rel">
+      <div class="rel__art"><img src="educators-assets/165cadd3-81e7-41d2-8227-4309298af673.png" alt="Shop floor at a regional manufacturing partner" loading="lazy"></div>
       <div class="badges"><span class="badge badge--partner">Regional</span></div>
       <h3 class="rel__t">Regional industry partners</h3>
       <p class="rel__d">Find the suppliers, yards and training centres in your area &mdash; the ones close enough for a site visit on a school bus.</p>
@@ -1332,6 +1333,7 @@ html.dc-gated #dc-gate{display:flex}
     </article>
 
     <article class="rel">
+      <div class="rel__art"><img src="educators-assets/be365835-3111-4c40-b007-bcead6629c25.png" alt="Manufacturing professional mentoring a student on the shop floor" loading="lazy"></div>
       <div class="badges"><span class="badge badge--partner">Mfg Dream Team</span></div>
       <h3 class="rel__t">Mfg Dream Team</h3>
       <p class="rel__d">A standing roster of manufacturing professionals who visit classrooms &mdash; recurring, not one-off.</p>
@@ -1355,6 +1357,7 @@ html.dc-gated #dc-gate{display:flex}
     </article>
 
     <article class="rel">
+      <div class="rel__art"><img src="educators-assets/d6ff85fe-b320-4658-9956-a68bd5b2a5b8.png" alt="Industry professional who volunteers with SparkForce camps" loading="lazy"></div>
       <div class="badges"><span class="badge badge--grant">Grant-funded</span></div>
       <h3 class="rel__t">SparkForce camp grants</h3>
       <p class="rel__d">Funding to run a maritime summer camp in your district. Applications open ahead of each season.</p>
