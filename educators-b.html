@@ -16,6 +16,9 @@
 @font-face{font-family:'Gomme Sans';src:url("educators-assets/553f4dab-df21-4654-a0e9-e7e786708a3d.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Gomme Sans';src:url("educators-assets/4c9a5210-fe5f-462b-be9c-b84d4ca364e2.otf") format('opentype');font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:'Gomme Sans';src:url("educators-assets/f5340ff2-7ead-42a0-a193-c71727f3c007.otf") format('opentype');font-weight:700;font-style:normal;font-display:swap}
+/* NOTE: this Gotham OTF has a broken no-break space — U+00A0 carries a 400px
+   advance at 16px against 4.8px for a normal space. Never use &nbsp; in body
+   copy on this page; use a plain space, or white-space:nowrap on a span. */
 @font-face{font-family:'Gotham';src:url("educators-assets/90729b76-ee26-4ed6-845e-e2ef4abb7e39.otf") format('opentype');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'Gotham';src:url("educators-assets/db0c6dac-389d-49cb-b550-f25f73638327.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Gotham';src:url("educators-assets/b1d826b7-9338-441a-9645-1190aa4f384f.otf") format('opentype');font-weight:500;font-style:normal;font-display:swap}
@@ -427,7 +430,8 @@ html.dc-gated #dc-gate{display:flex}
    Photography stays square to the page; the rhythm comes from the
    column spans and the staggered start heights, not from rotation. */
 .t1-a{grid-column:span 5}
-.t1-a .sheet__art{aspect-ratio:16/10}
+/* the drawing photographs are 1200x1600, so a 3:4 frame shows them whole */
+.t1-a .sheet__art{aspect-ratio:3/4}
 .t1-b{grid-column:span 4;padding-top:clamp(2rem,5vw,4.5rem)}
 .t1-b .sheet__art{aspect-ratio:3/4}
 .t1-c{grid-column:span 3}
@@ -884,7 +888,7 @@ html.dc-gated #dc-gate{display:flex}
         conversation with anyone. If today went sideways and you need something real
         for the back half of the period, start on this shelf.
       </p>
-      <p class="tier__count">8 items &middot; all PDF &middot; no login required</p>
+      <p class="tier__count">7 items &middot; all PDF &middot; no login required</p>
     </div>
   </div>
 
@@ -892,27 +896,27 @@ html.dc-gated #dc-gate{display:flex}
   <div class="t1__grid">
 
     <article class="sheet t1-a">
-      <div class="sheet__art"><img src="educators-assets/2f0905c9-1fd8-4e9a-bb73-36436e1703d5.png" alt="Fundamentals of Submarines and the Industrial Base deck cover" loading="lazy"></div>
+      <div class="sheet__art"><img src="educators-assets/prints/4-ba-040-meander-plate.jpg" alt="Production drawing 4-BA-040 beside the finished meander-slot plate" loading="lazy"></div>
       <div class="badges"><span class="badge badge--nologin">No login required</span></div>
-      <h3 class="sheet__t">Fundamentals of Submarines &amp; the Industrial Base</h3>
-      <p class="sheet__d">The primer deck. Why the fleet is being built, who builds it, and what that means for a student sitting in your room right now.</p>
-      <p class="sheet__src">General Dynamics &middot; 24 slides</p>
+      <h3 class="sheet__t">Print 4-BA-040 &mdash; Meander Slot Plate</h3>
+      <p class="sheet__d">A single &oslash;8 slot folded back on itself through a 6 mm plate. One end is drilled through at &oslash;9.8 and every other end is spot-drilled to the point only &mdash; the difference lives in a note under the view, not in the geometry, so students have to actually read the sheet.</p>
+      <p class="sheet__src">Vertical milling &middot; 70&times;6&times;140 &middot; tolerance &plusmn;0.2</p>
       <div class="facts">
-        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">10 min</span></div>
-        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Display or 20 min</span></div>
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
         <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
       </div>
     </article>
 
     <article class="sheet t1-b">
-      <div class="sheet__art"><img src="educators-assets/a66532ee-6795-403e-aa68-ba83221a03ee.png" alt="A Family Guide to Understanding the Maritime Industrial Base cover" loading="lazy"></div>
+      <div class="sheet__art"><img src="educators-assets/prints/4-ba-024-stepped-shaft.jpg" alt="Production drawing 4-BA-024 beside the finished stepped shaft" loading="lazy"></div>
       <div class="badges"><span class="badge badge--nologin">No login required</span></div>
-      <h3 class="sheet__t">A Family Guide to the Maritime Industrial Base</h3>
-      <p class="sheet__d">Written for the people at the kitchen table, not the classroom. Send it home after a careers conversation.</p>
-      <p class="sheet__src">BlueForge Alliance &middot; take-home</p>
+      <h3 class="sheet__t">Print 4-BA-024 &mdash; Stepped Shaft</h3>
+      <p class="sheet__d">Seven diameters on one 70 mm shaft, three of them f7, centre-drilled both ends to DIN 332. The fit table sits in the corner of the sheet, so students look the deviation up rather than being handed it.</p>
+      <p class="sheet__src">Turning &middot; &oslash;10&ndash;&oslash;22 &middot; St 37-2K</p>
       <div class="facts">
         <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
-        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Take-home</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
         <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
       </div>
     </article>
@@ -925,40 +929,40 @@ html.dc-gated #dc-gate{display:flex}
     </aside>
 
     <article class="sheet t1-c">
-      <div class="sheet__art"><img src="educators-assets/7ba3c2a6-54df-4382-a2b5-abaecf8e3a44.png" alt="Color by Numbers submarine activity sheet" loading="lazy"></div>
+      <div class="sheet__art"><img src="educators-assets/prints/4-ba-037-cube-and-vee.jpg" alt="Production drawing 4-BA-037 beside the finished cube with a 90 degree vee" loading="lazy"></div>
       <div class="badges"><span class="badge badge--nologin">No login required</span></div>
-      <h3 class="sheet__t">Color by Numbers</h3>
-      <p class="sheet__d">A first meeting with the submarine. An underwater picture appears as the numbers get filled in.</p>
-      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <h3 class="sheet__t">Print 4-BA-037 &mdash; Cube and Vee</h3>
+      <p class="sheet__d">Three views of a 45 mm cube worked on four faces: a 28 f7 tongue, 16 H7 and 14 H7 slots, and a 90&deg; vee cut on the centre line.</p>
+      <p class="sheet__src">Horizontal milling &middot; 45&times;45&times;45</p>
       <div class="facts">
         <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
-        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">15&ndash;20 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
         <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
       </div>
     </article>
 
     <article class="sheet t1-d">
-      <div class="sheet__art"><img src="educators-assets/fcf4dbbd-0611-467a-b1db-cc5bf74f45bf.png" alt="Submarines word search worksheet" loading="lazy"></div>
+      <div class="sheet__art"><img src="educators-assets/prints/4-ba-039-guide-block.jpg" alt="Production drawing 4-BA-039 beside the finished slotted guide block" loading="lazy"></div>
       <div class="badges"><span class="badge badge--nologin">No login required</span></div>
-      <h3 class="sheet__t">Submarines Word Search</h3>
-      <p class="sheet__d">Twenty pieces of vocabulary, from ballast to starboard &mdash; the shared language before the real lesson.</p>
-      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <h3 class="sheet__t">Print 4-BA-039 &mdash; Slotted Guide Block</h3>
+      <p class="sheet__d">A 20 H7 through slot, an 18 H7 step, and an R4 radius that only appears in the third view. A good first check of whether a student is reading all three.</p>
+      <p class="sheet__src">Vertical milling &middot; 50&times;20&times;40</p>
       <div class="facts">
         <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
-        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">15 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">30 min</span></div>
         <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
       </div>
     </article>
 
     <article class="sheet t1-e">
-      <div class="sheet__art"><img src="educators-assets/a49694ad-b2ff-4e25-8e9f-c8563c96693c.png" alt="Measurement worksheet with submarine silhouettes" loading="lazy"></div>
+      <div class="sheet__art"><img src="educators-assets/prints/4-ba-029-bush-and-pin.jpg" alt="Production drawing 4-BA-029 beside the finished bush and pin" loading="lazy"></div>
       <div class="badges"><span class="badge badge--nologin">No login required</span></div>
-      <h3 class="sheet__t">Measurement Worksheet</h3>
-      <p class="sheet__d">Shipyard workers measure every day. Students measure four hulls and find out how close is close enough.</p>
-      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <h3 class="sheet__t">Print 4-BA-029 &mdash; Bush and Pin Pair</h3>
+      <p class="sheet__d">Two parts on one sheet that have to fit each other: a bush bored 20 H7 with a 40 H7 recess, and a pin turned 20 h6 with a 40 h6 collar. Give one to each of two students and find out whose was right.</p>
+      <p class="sheet__src">Turning &middot; matched H7/h6 fits &middot; St 37-2K</p>
       <div class="facts">
         <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
-        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">25 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">2 periods</span></div>
         <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
       </div>
     </article>
@@ -1032,7 +1036,7 @@ html.dc-gated #dc-gate{display:flex}
 
     <article class="feature2">
       <div class="feature2__art">
-        <span class="feature2__play">&#9654;&nbsp; Video + lesson plan</span>
+        <span class="feature2__play">&#9654; Video + lesson plan</span>
         <img src="educators-assets/beb05e1b-26e5-45af-ac80-f14377eca8c1.png" alt="Shipyard worker under inspection lighting" loading="lazy">
       </div>
       <div class="feature2__body">
