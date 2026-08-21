@@ -363,34 +363,12 @@ html.dc-gated #dc-gate{display:flex}
 }
 .on-dark .tier__count{color:#ffffff8a}
 
-/* --- escalation prompt closing each tier ---------------------- */
-.escalate{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;
-  margin:clamp(2rem,4vw,3.25rem) var(--gut) 0;
-  padding:clamp(1.25rem,2.5vw,1.75rem) 0 clamp(3rem,6vw,5rem);
-  border-top:2px solid currentColor;
-}
-.escalate__k{
-  font-size:.625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--neutral-3);flex:none;
-}
-.on-dark .escalate__k{color:#ffffff85}
-.escalate__link{
-  font-family:var(--font-display);font-weight:300;
-  font-size:clamp(1.15rem,2.6vw,2rem);line-height:1.15;letter-spacing:-.015em;
-  text-decoration:none;display:inline-flex;align-items:baseline;gap:.6rem;
-  border-bottom:2px solid transparent;transition:border-color .2s,color .2s;
-}
-.escalate__link:hover{border-bottom-color:currentColor}
-.escalate__link .arw{font-size:.8em;transform:translateY(-.05em)}
-
 /* Below ~720px the oversized tier numeral steals too much of the measure,
    so it stops being a column and sits above the title instead. */
 @media (max-width:720px){
   .tier__head{grid-template-columns:1fr;gap:.25rem}
   .tier__n{font-size:clamp(3.25rem,17vw,5rem);line-height:.85}
   .tier__titles{padding-top:.25rem}
-  .escalate{flex-direction:column;gap:.65rem}
 }
 </style>
 
@@ -494,7 +472,7 @@ html.dc-gated #dc-gate{display:flex}
      against a stacked editorial list.
      ============================================================ -->
 <style>
-.t2{background:var(--ink);color:var(--white)}
+.t2{background:var(--ink);color:var(--white);padding-bottom:clamp(3rem,6vw,5rem)}
 .t2__band{
   position:relative;height:clamp(13rem,26vw,22rem);
   background:var(--ink) center/cover no-repeat;
@@ -548,7 +526,7 @@ html.dc-gated #dc-gate{display:flex}
      the current site — then a compact pair underneath.
      ============================================================ -->
 <style>
-.t3{background:var(--paper-2);color:var(--neutral-1)}
+.t3{background:var(--paper-2);color:var(--neutral-1);padding-bottom:clamp(3rem,6vw,5rem)}
 .spread{
   display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
   gap:0;align-items:stretch;margin-bottom:clamp(1.5rem,3vw,2.5rem);
@@ -606,7 +584,7 @@ html.dc-gated #dc-gate{display:flex}
      rows, hairlines, big type, and an image that reveals on hover.
      ============================================================ -->
 <style>
-.t4{background:var(--ink);color:var(--white);position:relative}
+.t4{background:var(--ink);color:var(--white);position:relative;padding-bottom:clamp(3rem,6vw,5rem)}
 .t4__index{padding:0 var(--gut);position:relative;z-index:1}
 .srow{
   position:relative;display:grid;
@@ -1105,10 +1083,6 @@ html.dc-gated #dc-gate{display:flex}
     </div>
   </div>
 
-  <div class="escalate">
-    <span class="escalate__k">Next rung</span>
-    <a class="escalate__link" href="#tier-3">Ready for a real run? Two of these ship boxes to your room <span class="arw">&rarr;</span></a>
-  </div>
 </section>
 
 <!-- ============================================================ TIER 3 -->
@@ -1220,10 +1194,6 @@ html.dc-gated #dc-gate{display:flex}
     </article>
   </div>
 
-  <div class="escalate">
-    <span class="escalate__k">Next rung</span>
-    <a class="escalate__link" href="#tier-4">Teaching this as a course? Eight programs go the full term <span class="arw">&rarr;</span></a>
-  </div>
 </section>
 
 <!-- ============================================================ TIER 4 -->
@@ -1311,10 +1281,6 @@ html.dc-gated #dc-gate{display:flex}
 
   </div>
 
-  <div class="escalate">
-    <span class="escalate__k">Next rung</span>
-    <a class="escalate__link" href="#tier-5">The last one is not a download. It is a phone call <span class="arw">&rarr;</span></a>
-  </div>
 </section>
 
 <!-- ============================================================ TIER 5 -->
