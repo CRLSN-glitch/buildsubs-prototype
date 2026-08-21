@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BuildSubmarines &middot; The Monday-Ready Shelf</title>
+<meta name="description" content="Classroom resources for the maritime industrial base, sorted by what they cost you: one period, one week, one unit, one term, or a lasting industry relationship.">
+
+<!-- ============================================================
+     FONTS — Gomme Sans (display) + Gotham (body), same OTFs
+     the Direction A page ships in educators-assets/.
+     ============================================================ -->
+<style>
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/5e8849a3-e447-461b-b74d-cb204512aa88.otf") format('opentype');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/4826483d-b0cf-4334-8d1c-90ed93162bd6.otf") format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/553f4dab-df21-4654-a0e9-e7e786708a3d.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/4c9a5210-fe5f-462b-be9c-b84d4ca364e2.otf") format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/f5340ff2-7ead-42a0-a193-c71727f3c007.otf") format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url("educators-assets/90729b76-ee26-4ed6-845e-e2ef4abb7e39.otf") format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url("educators-assets/db0c6dac-389d-49cb-b550-f25f73638327.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url("educators-assets/b1d826b7-9338-441a-9645-1190aa4f384f.otf") format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url("educators-assets/21a37840-a23a-442c-8425-ba7d86c35f74.otf") format('opentype');font-weight:700;font-style:normal;font-display:swap}
+</style>
+
+<!-- ============================================================
+     DESIGN TOKENS — brand values carried over verbatim from the
+     Direction A stylesheet so both prototypes stay in one system.
+     ============================================================ -->
+<style>
+:root{
+  /* Brand core */
+  --core-green:#50ad9a; --green-mist:#82dfcc; --teal-bright:#3fccca;
+  --light-blue:#7df5f3; --deep-green:#05634f; --teal-deep:#014452;
+  --forest-900:#1c3831; --forest-700:#306052;
+  --highlight-lime:#e0fd35; --navy-deep:#081b43;
+  /* Neutrals */
+  --neutral-1:#181818; --neutral-2:#5c5f69; --neutral-3:#888b96;
+  --neutral-4:#b7bac0; --neutral-5:#e7e8ea; --white:#fff;
+  --off-white:#fafafa; --grey-f4:#f4f4f4;
+  /* Direction B editorial extras */
+  --ink:#101010;            /* deeper than neutral-1 for spread backgrounds */
+  --paper:#f2f0ec;          /* warm newsprint for the light spreads */
+  --paper-2:#e6e3dd;
+  --rule:#181818;
+  --wash-white-10:#ffffff1a; --hairline-light:#dbdbdb33;
+  /* Type */
+  --font-display:'Gomme Sans','Arial Narrow',Arial,sans-serif;
+  --font-body:'Gotham','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --radius-md:0.5rem;
+  --gut:clamp(1.25rem,5vw,5.5rem);   /* page gutter */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--neutral-1);
+  font-family:var(--font-body);font-size:1rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,figure,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+::selection{background:var(--highlight-lime);color:var(--ink)}
+
+/* ---------- Editorial type primitives ---------- */
+.eyebrow{
+  font-family:var(--font-body);font-size:.6875rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+}
+.display{
+  font-family:var(--font-display);font-weight:200;
+  line-height:.92;letter-spacing:-.02em;
+}
+.rule{height:1px;background:currentColor;opacity:.22;width:100%}
+
+/* ---------- Skip link ---------- */
+.skip{position:absolute;left:-9999px;top:0;z-index:100000;background:var(--highlight-lime);
+  color:var(--ink);padding:.75rem 1.25rem;font-weight:700}
+.skip:focus{left:0}
+</style>
+
+<!-- dc-gate:start -->
+<style>
+html.dc-gated,html.dc-gated body{overflow:hidden!important}
+html.dc-gated .page{display:none!important}
+#dc-gate{display:none}
+html.dc-gated #dc-gate{display:flex}
+
+#dc-gate{
+  position:fixed;inset:0;z-index:2147483647;
+  align-items:center;justify-content:center;padding:24px;
+  background:#002d3e;color:#fff;
+  font-family:'Gotham',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+#dc-gate *{box-sizing:border-box}
+#dc-gate .g-card{width:100%;max-width:320px;text-align:center}
+#dc-gate .g-logo{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1;margin-bottom:30px}
+#dc-gate .g-logo-top{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:700;font-size:22px;letter-spacing:3.2px;color:#50ad9a;text-transform:uppercase}
+#dc-gate .g-logo-main{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:2.2px;text-transform:uppercase}
+#dc-gate .g-title{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:300;font-size:27px;line-height:1.3;margin:0 0 8px}
+#dc-gate .g-sub{font-size:13px;line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 22px}
+#dc-gate form{display:flex;flex-direction:column;gap:12px}
+#dc-gate .g-input{
+  width:100%;font-family:'Gotham',system-ui,sans-serif;font-size:16px;color:#fff;
+  padding:13px 16px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.4);border-radius:10px;outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+#dc-gate .g-input::placeholder{color:rgba(255,255,255,.55)}
+#dc-gate .g-input:focus{border-color:#3fccca;box-shadow:0 0 0 3px rgba(63,204,202,.25)}
+#dc-gate .g-card.is-error .g-input[type=password]{border-color:#ff8a8a;box-shadow:0 0 0 3px rgba(255,138,138,.2)}
+#dc-gate .g-btn{
+  width:100%;height:48px;background:#3fccca;border:0;border-radius:10px;cursor:pointer;
+  font-family:'Gomme Sans',system-ui,sans-serif;font-weight:400;font-size:16px;color:#181818;
+  transition:transform .14s cubic-bezier(.23,1,.32,1),filter .2s ease;
+}
+#dc-gate .g-btn:active{transform:scale(.98)}
+@media (hover:hover) and (pointer:fine){#dc-gate .g-btn:hover{filter:brightness(1.06)}}
+#dc-gate .g-error{font-size:12px;color:#ffb4b4;margin:2px 0 0;min-height:1em}
+@media (prefers-reduced-motion:reduce){#dc-gate .g-btn{transition:none}}
+</style>
+<script>
+(function(){
+  var ok = false;
+  try { ok = sessionStorage.getItem('bs-educators-b-auth') === '1'; } catch (e) {}
+  if (!ok) document.documentElement.classList.add('dc-gated');
+})();
+</script>
+<!-- dc-gate:end -->
+
+<!-- ============================================================
+     MASTHEAD — a static reproduction of DesignSystem_6cc531.Navbar
+     (components/navigation/Navbar.jsx). Same geometry, colours and
+     hover behaviour; the React hover state is expressed in CSS here.
+     ============================================================ -->
+<style>
+.masthead{
+  position:fixed;top:0;left:0;right:0;z-index:99999;
+  display:flex;align-items:center;width:100%;
+  min-height:4.5rem;padding:0 1.25rem;
+  color:var(--white);background:#18181866;
+  -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  border-bottom:1px solid #dbdbdb33;
+}
+.masthead__inner{display:flex;justify-content:space-between;align-items:center;width:100%;height:100%}
+.masthead__logo{cursor:pointer;display:flex;align-items:center;flex:none}
+.masthead__logo img{display:block;width:170px}
+.masthead__nav{flex:1;display:flex;justify-content:flex-end;align-items:center;margin-left:1.5rem;gap:1.25rem}
+.masthead__links{display:flex;align-items:center;gap:2rem;margin-right:1rem}
+.navlink{
+  display:flex;align-items:center;gap:.4rem;color:var(--white);text-align:center;
+  padding:1.5rem 0;flex:none;cursor:pointer;text-decoration:none;
+  font-family:var(--font-body);font-size:.875rem;font-weight:400;
+  border-bottom:3px solid transparent;transition:border-color .2s;
+}
+.navlink:hover,.navlink.is-active{border-bottom-color:var(--core-green)}
+.navlink svg{flex:none}
+.navbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.75rem;
+  text-align:center;text-decoration:none;cursor:pointer;border:none;
+  border-radius:var(--radius-md);font-family:var(--font-display);font-weight:400;
+  line-height:1.125;flex:none;padding:.4rem 1.13rem .5rem;font-size:.875rem;
+  transition:background .2s ease,color .2s ease;
+}
+.navbtn--ghost{background:var(--wash-white-10);color:var(--white)}
+.navbtn--primary{background:var(--green-mist);color:var(--neutral-1)}
+.navbtn--primary:hover{background:#82dfccb3}
+/* The design-system navbar is desktop-first; below the CTA breakpoint the
+   secondary action and the link row step down rather than wrap. */
+@media (max-width:1080px){
+  .masthead__links{gap:1.25rem;margin-right:.5rem}
+  .navbtn--ghost{display:none}
+}
+@media (max-width:820px){
+  .masthead__links{display:none}
+  .masthead__logo img{width:132px}
+}
+</style>
+
+<!-- ============================================================
+     COMMITMENT LADDER — sticky stepper directly under the masthead.
+     Primary navigation for the page and an anchor nav at the same time.
+     ============================================================ -->
+<style>
+.ladder{
+  position:sticky;top:4.5rem;z-index:9000;
+  background:var(--ink);color:var(--white);
+  border-bottom:1px solid #ffffff1f;
+}
+.ladder__scroll{
+  display:flex;align-items:stretch;
+  overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  scroll-snap-type:x proximity;
+}
+.ladder__scroll::-webkit-scrollbar{display:none}
+.step{
+  position:relative;flex:1 0 auto;min-width:11.5rem;scroll-snap-align:start;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:.15rem;
+  padding:.85rem clamp(.85rem,1.6vw,1.5rem) .9rem;
+  text-decoration:none;color:var(--white);
+  border-right:1px solid #ffffff1a;
+  transition:background .25s ease,color .25s ease;
+}
+.step:last-child{border-right:0}
+.step__n{
+  font-family:var(--font-display);font-weight:200;font-size:1.5rem;line-height:1;
+  color:var(--core-green);transition:color .25s ease;
+}
+.step__label{
+  font-family:var(--font-display);font-weight:400;font-size:.9375rem;line-height:1.15;
+  letter-spacing:-.005em;
+}
+.step__cost{
+  font-size:.6875rem;font-weight:500;letter-spacing:.04em;
+  color:var(--neutral-3);transition:color .25s ease;
+}
+.step:hover,.step:focus-visible{background:#ffffff12}
+.step.is-current{background:var(--white);color:var(--ink)}
+.step.is-current .step__n{color:var(--deep-green)}
+.step.is-current .step__cost{color:var(--neutral-2)}
+/* progress hairline that fills as the ladder is climbed */
+.ladder__bar{height:2px;background:#ffffff1a}
+.ladder__fill{height:100%;width:0;background:var(--highlight-lime);transition:width .35s cubic-bezier(.23,1,.32,1)}
+@media (max-width:820px){
+  .ladder{top:4.5rem}
+  .step{min-width:9.5rem;padding:.7rem .9rem .75rem}
+  .step__label{font-size:.85rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .step,.ladder__fill{transition:none}
+}
+</style>
+
+<!-- ============================================================
+     HERO — full-bleed opening spread
+     ============================================================ -->
+<style>
+.hero{
+  position:relative;min-height:92vh;display:flex;align-items:flex-end;
+  padding:9rem var(--gut) clamp(2.5rem,5vw,4.5rem);
+  background:var(--ink) center/cover no-repeat;
+  color:var(--white);overflow:hidden;isolation:isolate;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#101010cc 0%,#10101059 38%,#101010e6 100%);
+}
+.hero__grid{
+  width:100%;display:grid;gap:clamp(1.5rem,4vw,3.5rem);
+  grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);align-items:end;
+}
+.hero__eyebrow{color:var(--green-mist);margin-bottom:clamp(1rem,2.5vw,1.75rem)}
+.hero h1{
+  font-family:var(--font-display);font-weight:200;
+  font-size:clamp(2.9rem,9.2vw,8.5rem);line-height:.9;letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.hero h1 em{
+  font-style:normal;font-weight:600;
+  color:var(--highlight-lime);
+}
+.hero__lede{
+  font-size:clamp(1rem,1.35vw,1.1875rem);line-height:1.55;font-weight:300;
+  color:#ffffffe0;max-width:34ch;
+}
+.hero__meta{
+  margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;
+  font-size:.75rem;letter-spacing:.04em;color:#ffffffa8;
+}
+.hero__meta strong{color:var(--white);font-weight:500}
+.hero__cue{
+  margin-top:clamp(2rem,5vw,3.5rem);padding-top:1.25rem;
+  border-top:1px solid #ffffff33;display:flex;align-items:baseline;
+  gap:.75rem;font-size:.8125rem;color:#ffffffb5;
+}
+.hero__cue b{font-family:var(--font-display);font-weight:400;color:var(--white);font-size:1rem}
+@media (max-width:900px){
+  .hero{min-height:auto;padding-top:8rem}
+  .hero__grid{grid-template-columns:1fr}
+  .hero__lede{max-width:none}
+}
+</style>
+
+<!-- ============================================================
+     SHARED EDITORIAL PRIMITIVES
+     Badges, the three hard facts every item carries, tier headers,
+     and the escalation prompt that closes each tier.
+     ============================================================ -->
+<style>
+/* --- badges --------------------------------------------------- */
+.badges{display:flex;flex-wrap:wrap;gap:.35rem}
+.badge{
+  font-size:.625rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  line-height:1;padding:.36rem .5rem .32rem;border-radius:2px;white-space:nowrap;
+}
+.badge--ship{background:var(--highlight-lime);color:var(--ink)}
+.badge--nologin{background:var(--deep-green);color:var(--white)}
+.badge--free{background:var(--teal-bright);color:var(--ink)}
+.badge--grant{background:var(--navy-deep);color:var(--white)}
+.badge--partner{background:#18181814;color:var(--neutral-2);box-shadow:inset 0 0 0 1px #18181826}
+.on-dark .badge--partner{background:#ffffff1f;color:#ffffffd0;box-shadow:inset 0 0 0 1px #ffffff2e}
+
+/* --- the three hard facts ------------------------------------- */
+.facts{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;border-top:1px solid #18181826;margin-top:auto;
+}
+.on-dark .facts{border-top-color:#ffffff2b}
+.fact{padding:.6rem .75rem .55rem 0}
+.fact + .fact{padding-left:.75rem;border-left:1px solid #18181826}
+.on-dark .fact + .fact{border-left-color:#ffffff2b}
+.fact__k{
+  display:block;font-size:.5625rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--neutral-3);margin-bottom:.2rem;
+}
+.on-dark .fact__k{color:#ffffff85}
+.fact__v{
+  display:block;font-family:var(--font-display);font-weight:400;
+  font-size:.875rem;line-height:1.15;
+}
+
+/* --- tier header ---------------------------------------------- */
+.tier{scroll-margin-top:7.5rem;position:relative}
+.tier__head{
+  display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(1rem,3vw,2.5rem);align-items:start;
+  padding:clamp(3.5rem,7vw,6.5rem) var(--gut) clamp(1.75rem,3.5vw,2.75rem);
+}
+.tier__n{
+  font-family:var(--font-display);font-weight:200;line-height:.78;
+  font-size:clamp(4.5rem,13vw,12rem);letter-spacing:-.04em;
+  /* currentColor here would resolve to this rule's own transparent `color`,
+     leaving the stroke invisible — both tones are stated explicitly. */
+  -webkit-text-stroke:1px #181818a6;color:transparent;
+  opacity:.85;
+}
+.on-dark .tier__n{-webkit-text-stroke-color:#ffffff8c}
+.tier__titles{padding-top:clamp(.5rem,1.5vw,1.25rem);min-width:0}
+.tier__eyebrow{color:var(--deep-green);margin-bottom:.85rem}
+.on-dark .tier__eyebrow{color:var(--green-mist)}
+.tier__title{
+  font-family:var(--font-display);font-weight:200;
+  font-size:clamp(2rem,5.6vw,4.75rem);line-height:.95;letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.tier__title b{font-weight:600}
+.tier__sub{
+  margin-top:1rem;max-width:52ch;font-size:clamp(.9375rem,1.15vw,1.0625rem);
+  line-height:1.6;font-weight:300;color:var(--neutral-2);
+}
+.on-dark .tier__sub{color:#ffffffbb}
+.tier__count{
+  margin-top:1rem;font-size:.6875rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--neutral-3);
+}
+.on-dark .tier__count{color:#ffffff8a}
+
+/* --- secondary filter chips (visual; demoted from primary nav) -- */
+.chips{
+  display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;
+  padding:0 var(--gut) clamp(1.75rem,3.5vw,2.5rem);
+}
+.chips__k{
+  font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--neutral-3);margin-right:.4rem;
+}
+.on-dark .chips__k{color:#ffffff7d}
+.chip{
+  font-size:.75rem;font-weight:500;line-height:1;padding:.5rem .7rem .45rem;
+  border-radius:100px;box-shadow:inset 0 0 0 1px #18181833;color:var(--neutral-1);
+  background:transparent;cursor:default;transition:background .2s,box-shadow .2s;
+}
+.chip:hover{background:#18181810}
+.on-dark .chip{box-shadow:inset 0 0 0 1px #ffffff3d;color:#ffffffdb}
+.on-dark .chip:hover{background:#ffffff14}
+
+/* --- escalation prompt closing each tier ---------------------- */
+.escalate{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;
+  margin:clamp(2rem,4vw,3.25rem) var(--gut) 0;
+  padding:clamp(1.25rem,2.5vw,1.75rem) 0 clamp(3rem,6vw,5rem);
+  border-top:2px solid currentColor;
+}
+.escalate__k{
+  font-size:.625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--neutral-3);flex:none;
+}
+.on-dark .escalate__k{color:#ffffff85}
+.escalate__link{
+  font-family:var(--font-display);font-weight:300;
+  font-size:clamp(1.15rem,2.6vw,2rem);line-height:1.15;letter-spacing:-.015em;
+  text-decoration:none;display:inline-flex;align-items:baseline;gap:.6rem;
+  border-bottom:2px solid transparent;transition:border-color .2s,color .2s;
+}
+.escalate__link:hover{border-bottom-color:currentColor}
+.escalate__link .arw{font-size:.8em;transform:translateY(-.05em)}
+
+/* Below ~720px the oversized tier numeral steals too much of the measure,
+   so it stops being a column and sits above the title instead. */
+@media (max-width:720px){
+  .tier__head{grid-template-columns:1fr;gap:.25rem}
+  .tier__n{font-size:clamp(3.25rem,17vw,5rem);line-height:.85}
+  .tier__titles{padding-top:.25rem}
+  .escalate{flex-direction:column;gap:.65rem}
+}
+</style>
+
+<!-- ============================================================
+     TIER 1 — "THE FLAT FILE"
+     Paper spread. Document covers behave like physical cutouts:
+     rotated, shadowed, overlapping an asymmetric grid.
+     ============================================================ -->
+<style>
+.t1{background:var(--paper);color:var(--neutral-1)}
+.t1__grid{
+  padding:0 var(--gut);
+  display:grid;gap:clamp(1.25rem,2.6vw,2.25rem);
+  grid-template-columns:repeat(12,minmax(0,1fr));align-items:start;
+}
+.sheet{
+  position:relative;display:flex;flex-direction:column;gap:.85rem;
+  padding-bottom:.25rem;
+}
+.sheet__art{
+  position:relative;background:var(--white);
+  box-shadow:0 1px 2px #0000001a,0 12px 26px -12px #00000059;
+  transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s ease;
+}
+.sheet__art img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.sheet:hover .sheet__art{transform:rotate(0deg) translateY(-4px);box-shadow:0 2px 4px #00000014,0 22px 40px -16px #00000070}
+.sheet__t{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.05rem,1.5vw,1.375rem);line-height:1.12;letter-spacing:-.012em;
+}
+.sheet__d{font-size:.8125rem;line-height:1.5;font-weight:300;color:var(--neutral-2)}
+.sheet__src{
+  font-size:.625rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--neutral-3);
+}
+/* deliberate, hand-placed rotations + spans — the anti-grid */
+.t1-a{grid-column:span 5}
+.t1-a .sheet__art{aspect-ratio:16/10;transform:rotate(-1.4deg)}
+.t1-b{grid-column:span 4;padding-top:clamp(2rem,5vw,4.5rem)}
+.t1-b .sheet__art{aspect-ratio:3/4;transform:rotate(1.8deg)}
+.t1-c{grid-column:span 3}
+.t1-c .sheet__art{aspect-ratio:3/4;transform:rotate(-2.4deg)}
+.t1-d{grid-column:span 3;padding-top:clamp(1rem,3vw,2.5rem)}
+.t1-d .sheet__art{aspect-ratio:3/4;transform:rotate(2.1deg)}
+.t1-e{grid-column:span 4}
+.t1-e .sheet__art{aspect-ratio:3/4;transform:rotate(-1.1deg)}
+.t1-f{grid-column:span 5;padding-top:clamp(1rem,2.5vw,2rem)}
+.t1-f .sheet__art{aspect-ratio:16/9;transform:rotate(.9deg)}
+
+/* editorial standfirst — the page's own voice, holding the open column */
+.t1-quote{grid-column:span 5;align-self:start;padding:clamp(.5rem,2vw,1.75rem) 0 0}
+.standfirst{
+  border-top:2px solid var(--ink);padding-top:1.25rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.standfirst p{
+  font-family:var(--font-display);font-weight:200;
+  font-size:clamp(1.35rem,2.5vw,2.15rem);line-height:1.08;letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.standfirst p b{font-weight:600;background:var(--highlight-lime);box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;padding:0 .12em}
+.standfirst__k{
+  font-size:.625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--neutral-3);
+}
+/* the ATDM pack — a stack of prints, collapsed into one item */
+.t1-pack{grid-column:span 6}
+.pack{position:relative;padding:0 0 1.1rem 1.1rem}
+.pack__stack{position:relative;aspect-ratio:4/3}
+.pack__stack img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--white);
+  box-shadow:0 1px 2px #0000001a,0 14px 30px -14px #00000066;
+  transition:transform .4s cubic-bezier(.23,1,.32,1);
+}
+.pack__stack img:nth-child(1){transform:translate(-1.1rem,1.1rem) rotate(-3deg)}
+.pack__stack img:nth-child(2){transform:translate(-.5rem,.5rem) rotate(1.6deg)}
+.pack__stack img:nth-child(3){transform:rotate(-.5deg)}
+.pack:hover .pack__stack img:nth-child(1){transform:translate(-1.9rem,1.5rem) rotate(-5.5deg)}
+.pack:hover .pack__stack img:nth-child(2){transform:translate(-.9rem,.7rem) rotate(2.8deg)}
+.pack__count{
+  position:absolute;right:-.35rem;top:-.75rem;z-index:3;
+  background:var(--ink);color:var(--white);
+  font-family:var(--font-display);font-weight:300;font-size:1.35rem;line-height:1;
+  padding:.55rem .7rem .6rem;
+}
+.pack__count small{display:block;font-family:var(--font-body);font-size:.5rem;font-weight:700;letter-spacing:.14em;margin-top:.2rem}
+@media (max-width:1000px){
+  .t1-a,.t1-f,.t1-pack,.t1-quote{grid-column:span 12}
+  .t1-b,.t1-c,.t1-d,.t1-e{grid-column:span 6}
+}
+@media (max-width:560px){
+  .t1-b,.t1-c,.t1-d,.t1-e{grid-column:span 12;padding-top:0}
+  .sheet__art{transform:none!important}
+}
+</style>
+
+<!-- ============================================================
+     TIER 2 — "ONE PERIOD"
+     Dark spread. Full-bleed photo band, then one oversized feature
+     against a stacked editorial list.
+     ============================================================ -->
+<style>
+.t2{background:var(--ink);color:var(--white)}
+.t2__band{
+  position:relative;height:clamp(13rem,26vw,22rem);
+  background:var(--ink) center/cover no-repeat;
+  display:flex;align-items:flex-end;
+  padding:0 var(--gut) clamp(1.25rem,2.5vw,2rem);
+  margin-bottom:clamp(2rem,4vw,3.5rem);
+}
+.t2__band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#10101040,#101010e8)}
+.t2__bandtxt{position:relative;z-index:1;font-size:.8125rem;color:#ffffffc4;max-width:46ch;font-weight:300}
+.t2__bandtxt b{display:block;font-family:var(--font-display);font-weight:300;font-size:clamp(1.25rem,3vw,2.25rem);color:var(--white);line-height:1.05;margin-bottom:.4rem;letter-spacing:-.015em}
+.t2__split{
+  padding:0 var(--gut);display:grid;gap:clamp(1.5rem,3.5vw,3rem);
+  grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:start;
+}
+/* oversized feature */
+.feature2{position:relative;display:flex;flex-direction:column}
+.feature2__art{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
+.feature2__art img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.feature2:hover .feature2__art img{transform:scale(1.03)}
+.feature2__play{
+  position:absolute;left:1.25rem;bottom:1.25rem;z-index:2;
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--highlight-lime);color:var(--ink);
+  font-size:.625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  padding:.5rem .75rem .45rem;
+}
+.feature2__body{padding-top:1.25rem;display:flex;flex-direction:column;gap:.75rem;flex:1}
+.feature2__t{font-family:var(--font-display);font-weight:200;font-size:clamp(1.6rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.022em}
+.feature2__d{font-size:.9375rem;line-height:1.6;font-weight:300;color:#ffffffc2;max-width:46ch}
+/* stacked list */
+.stack2{display:flex;flex-direction:column}
+.row2{
+  display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:1rem;
+  padding:1.15rem 0;border-top:1px solid #ffffff26;
+  transition:background .25s ease;
+}
+.row2:last-child{border-bottom:1px solid #ffffff26}
+.row2:hover{background:#ffffff0a}
+.row2__art{aspect-ratio:3/4;overflow:hidden;background:#ffffff12}
+.row2__art img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.row2__body{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.row2__t{font-family:var(--font-display);font-weight:400;font-size:1.0625rem;line-height:1.15;letter-spacing:-.01em}
+.row2__d{font-size:.8125rem;line-height:1.5;font-weight:300;color:#ffffffab}
+@media (max-width:900px){.t2__split{grid-template-columns:1fr}}
+</style>
+
+<!-- ============================================================
+     TIER 3 — "THE RUN"
+     Paper spread. Two outsized alternating feature spreads carry the
+     shipped-materials offers — the strongest and most buried items on
+     the current site — then a compact pair underneath.
+     ============================================================ -->
+<style>
+.t3{background:var(--paper-2);color:var(--neutral-1)}
+.spread{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
+  gap:0;align-items:stretch;margin-bottom:clamp(1.5rem,3vw,2.5rem);
+}
+.spread__art{position:relative;min-height:clamp(15rem,34vw,29rem);overflow:hidden;background:var(--ink)}
+.spread__art img{width:100%;height:100%;object-fit:cover;display:block}
+.spread__flag{
+  position:absolute;top:0;left:0;z-index:2;
+  background:var(--highlight-lime);color:var(--ink);
+  font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:.7rem 1.1rem .62rem;
+}
+.spread__body{
+  background:var(--white);padding:clamp(1.75rem,3.5vw,3.25rem);
+  display:flex;flex-direction:column;gap:1rem;
+}
+.spread__eyebrow{color:var(--deep-green)}
+.spread__t{
+  font-family:var(--font-display);font-weight:200;
+  font-size:clamp(1.9rem,4.4vw,3.6rem);line-height:.98;letter-spacing:-.025em;
+}
+.spread__d{font-size:.9375rem;line-height:1.65;font-weight:300;color:var(--neutral-2);max-width:48ch}
+.spread__ship{
+  display:flex;gap:.7rem;align-items:flex-start;
+  padding:.85rem 1rem;background:var(--paper);border-left:3px solid var(--deep-green);
+  font-size:.8125rem;line-height:1.5;
+}
+.spread__ship b{font-weight:700}
+.spread--flip{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)}
+.spread--flip .spread__art{order:2}
+.spread--flip .spread__body{order:1}
+.t3__pair{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(1.25rem,2.5vw,2rem);padding:0 var(--gut);
+}
+.mini{background:var(--white);display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease}
+.mini:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px #00000059}
+.mini__art{aspect-ratio:16/10;overflow:hidden;background:var(--neutral-5)}
+.mini__art img{width:100%;height:100%;object-fit:cover}
+.mini__body{padding:1.15rem 1.25rem 1rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.mini__t{font-family:var(--font-display);font-weight:400;font-size:1.25rem;line-height:1.12;letter-spacing:-.012em}
+.mini__d{font-size:.8125rem;line-height:1.55;font-weight:300;color:var(--neutral-2)}
+.spread--full{padding:0 var(--gut)}
+@media (max-width:900px){
+  .spread,.spread--flip{grid-template-columns:1fr}
+  .spread--flip .spread__art{order:0}
+  .spread--flip .spread__body{order:0}
+  .t3__pair{grid-template-columns:1fr}
+}
+</style>
+
+<!-- ============================================================
+     TIER 4 — "THE SYLLABUS"
+     Dark spread, set as an editorial index rather than cards: numbered
+     rows, hairlines, big type, and an image that reveals on hover.
+     ============================================================ -->
+<style>
+.t4{background:var(--ink);color:var(--white);position:relative}
+.t4__index{padding:0 var(--gut);position:relative;z-index:1}
+.srow{
+  position:relative;display:grid;
+  grid-template-columns:3.25rem minmax(0,1.5fr) minmax(0,1fr) 9.5rem;
+  gap:clamp(.75rem,2vw,2rem);align-items:center;
+  padding:clamp(1.1rem,2.2vw,1.7rem) 0;
+  border-top:1px solid #ffffff26;text-decoration:none;color:inherit;
+  transition:padding-left .35s cubic-bezier(.23,1,.32,1),background .3s ease;
+}
+.srow:last-of-type{border-bottom:1px solid #ffffff26}
+.srow:hover{background:#ffffff08;padding-left:.9rem}
+.srow__n{
+  font-family:var(--font-display);font-weight:200;font-size:.9375rem;
+  color:#ffffff70;letter-spacing:.04em;
+}
+.srow__t{
+  font-family:var(--font-display);font-weight:300;
+  font-size:clamp(1.3rem,2.9vw,2.4rem);line-height:1.02;letter-spacing:-.022em;
+  transition:color .25s ease;
+}
+.srow:hover .srow__t{color:var(--green-mist)}
+.srow__d{font-size:.8125rem;line-height:1.5;font-weight:300;color:#ffffffa3;max-width:42ch}
+.srow__meta{display:flex;flex-direction:column;align-items:flex-end;gap:.45rem;text-align:right;flex:none}
+.srow__len{
+  font-family:var(--font-display);font-weight:400;font-size:.875rem;white-space:nowrap;
+}
+.srow__arrives{font-size:.625rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#ffffff85;white-space:nowrap}
+/* hover image reveal — pinned to the right of the index */
+.srow__peek{
+  position:absolute;right:0;top:50%;width:13rem;aspect-ratio:4/3;
+  transform:translate(1.5rem,-50%) scale(.94);
+  opacity:0;pointer-events:none;z-index:3;
+  box-shadow:0 20px 48px -18px #000000a6;overflow:hidden;background:var(--ink);
+  transition:opacity .3s ease,transform .45s cubic-bezier(.23,1,.32,1);
+}
+.srow__peek img{width:100%;height:100%;object-fit:cover}
+@media (hover:hover) and (pointer:fine) and (min-width:1200px){
+  .srow:hover .srow__peek{opacity:1;transform:translate(0,-50%) scale(1)}
+  .srow:hover .srow__d{color:#ffffff6b}
+}
+@media (max-width:1050px){
+  .srow{grid-template-columns:2.5rem minmax(0,1fr) 9.5rem}
+  .srow__d{display:none}
+}
+@media (max-width:640px){
+  .srow{grid-template-columns:2rem minmax(0,1fr);row-gap:.5rem}
+  .srow__meta{grid-column:2;align-items:flex-start;text-align:left;flex-direction:row;gap:.9rem}
+}
+</style>
+
+<!-- ============================================================
+     TIER 5 — "THE RELATIONSHIP"
+     The business goal. Full-bleed photography, people-first cards and
+     the page's strongest call to action.
+     ============================================================ -->
+<style>
+.t5{background:var(--ink);color:var(--white)}
+.t5__hero{
+  position:relative;min-height:clamp(18rem,42vw,32rem);
+  display:flex;align-items:flex-end;
+  padding:clamp(3rem,8vw,7rem) var(--gut) clamp(2rem,4vw,3.5rem);
+  background:var(--ink) center/cover no-repeat;overflow:hidden;
+}
+.t5__hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#10101073,#101010f2)}
+.t5__heroin{position:relative;z-index:1;width:100%;display:grid;gap:clamp(1rem,3vw,2.5rem);grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:end}
+.t5__heroin h2{font-family:var(--font-display);font-weight:200;font-size:clamp(2.1rem,6.2vw,5.5rem);line-height:.94;letter-spacing:-.028em}
+.t5__heroin h2 b{font-weight:600;color:var(--highlight-lime)}
+.t5__heroin p{font-size:clamp(.9375rem,1.2vw,1.0625rem);line-height:1.6;font-weight:300;color:#ffffffd1;max-width:40ch}
+.t5__grid{
+  padding:clamp(2.5rem,5vw,4rem) var(--gut) 0;
+  display:grid;gap:clamp(1.1rem,2.2vw,1.75rem);
+  grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));
+  align-items:start;   /* cards size to their content rather than leaving hollow columns */
+}
+.rel{
+  display:flex;flex-direction:column;gap:.8rem;
+  padding:1.4rem 1.4rem 1.15rem;background:#ffffff0d;
+  box-shadow:inset 0 0 0 1px #ffffff1f;
+  transition:background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+}
+.rel:hover{background:#ffffff17;transform:translateY(-3px)}
+.rel__art{margin:-1.4rem -1.4rem .3rem;aspect-ratio:16/9;overflow:hidden;background:#ffffff0f}
+.rel__art img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.rel:hover .rel__art img{transform:scale(1.04)}
+.rel--wide .rel__art{aspect-ratio:21/9}
+.rel__t{font-family:var(--font-display);font-weight:400;font-size:1.3125rem;line-height:1.1;letter-spacing:-.014em}
+.rel__d{font-size:.8125rem;line-height:1.55;font-weight:300;color:#ffffffb0;flex:1}
+.rel--wide{grid-column:span 2}
+.rel--wide .rel__t{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:300}
+@media (max-width:760px){.rel--wide{grid-column:span 1}}
+/* closing CTA */
+.cta{
+  margin:clamp(3rem,6vw,5rem) var(--gut) 0;
+  border-top:2px solid var(--highlight-lime);
+  padding:clamp(2rem,4vw,3.25rem) 0 clamp(3.5rem,7vw,6rem);
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:start;
+}
+.cta h3{font-family:var(--font-display);font-weight:200;font-size:clamp(1.8rem,4.6vw,3.6rem);line-height:.98;letter-spacing:-.025em}
+.cta p{margin-top:1rem;font-size:.9375rem;line-height:1.65;font-weight:300;color:#ffffffbd;max-width:46ch}
+.cta__form{display:flex;flex-direction:column;gap:.6rem}
+.cta__form label{font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ffffff85}
+.cta__form input,.cta__form select{
+  width:100%;font-family:var(--font-body);font-size:.9375rem;color:var(--white);
+  padding:.85rem 1rem;background:#ffffff12;border:1px solid #ffffff33;border-radius:var(--radius-md);
+  outline:none;transition:border-color .15s,box-shadow .15s;
+}
+.cta__form input::placeholder{color:#ffffff6b}
+.cta__form input:focus,.cta__form select:focus{border-color:var(--teal-bright);box-shadow:0 0 0 3px #3fccca3d}
+.cta__form select option{background:var(--ink);color:var(--white)}
+.cta__btn{
+  margin-top:.35rem;width:100%;padding:.95rem 1.5rem 1rem;border:0;cursor:pointer;
+  border-radius:var(--radius-md);background:var(--green-mist);color:var(--neutral-1);
+  font-family:var(--font-display);font-weight:400;font-size:1.0625rem;line-height:1.125;
+  transition:background .2s ease,transform .14s cubic-bezier(.23,1,.32,1);
+}
+.cta__btn:hover{background:#82dfccb3}
+.cta__btn:active{transform:scale(.99)}
+.cta__note{font-size:.6875rem;color:#ffffff8a;line-height:1.5}
+@media (max-width:900px){.cta{grid-template-columns:1fr}}
+</style>
+
+<!-- ============================================================
+     FOOTER — static reproduction of DesignSystem_6cc531.Footer
+     (components/navigation/Footer.jsx).
+     ============================================================ -->
+<style>
+.site-footer{
+  position:relative;z-index:2;padding:2.5rem 4rem;
+  background:var(--neutral-1);color:var(--white);
+  border-top:1px solid var(--white);font-family:var(--font-body);
+}
+.site-footer__top{display:flex;justify-content:space-between;align-items:center;gap:4vw;flex-wrap:wrap}
+.site-footer__logo{width:9.6875rem;display:block}
+.site-footer__links{display:flex;gap:1.5rem;justify-content:flex-end;flex-wrap:wrap}
+.site-footer__links a{
+  color:var(--white);text-align:center;font-size:.875rem;font-weight:400;
+  text-decoration:none;cursor:pointer;transition:all .2s;
+}
+.site-footer__links a:hover{font-weight:500}
+.site-footer__rule{width:100%;height:1px;background:#ffffff1a;margin:2rem 0}
+.site-footer__bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.site-footer__legalcol{display:flex;flex-direction:column;gap:.5rem}
+.site-footer__copy{font-size:.875rem}
+.site-footer__funding{font-size:.75rem}
+.site-footer__legal{display:flex;gap:1.5rem;align-items:center}
+.site-footer__legal a{color:var(--white);font-size:.875rem;text-decoration:underline;cursor:pointer}
+.site-footer__social{display:flex;gap:.75rem;align-items:center}
+.site-footer__social a{display:flex;width:1.5rem;height:1.5rem;color:var(--white)}
+.site-footer__social img{width:100%;height:100%}
+@media (max-width:700px){
+  .site-footer{padding:2.5rem 1.5rem}
+  .site-footer__links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- dc-gate:start -->
+<div id="dc-gate" role="dialog" aria-modal="true" aria-labelledby="dc-gate-title">
+  <div class="g-card" id="dc-gate-card">
+    <div class="g-logo">
+      <span class="g-logo-top">Build</span>
+      <span class="g-logo-main">Submarines.com</span>
+    </div>
+    <h1 class="g-title" id="dc-gate-title">Prototype access</h1>
+    <p class="g-sub">Sign in to view the educator resources prototype.</p>
+    <form id="dc-gate-form" autocomplete="off">
+      <input class="g-input" id="dc-gate-user" type="text" placeholder="Login" aria-label="Login"
+             autocomplete="off" autocapitalize="none" spellcheck="false">
+      <input class="g-input" id="dc-gate-pw" type="password" placeholder="Password" aria-label="Password"
+             autocomplete="off" autocapitalize="none" spellcheck="false">
+      <button class="g-btn" type="submit">Enter</button>
+      <p class="g-error" id="dc-gate-error" hidden>Incorrect password. Try again.</p>
+    </form>
+  </div>
+</div>
+<!-- dc-gate:end -->
+
+<div class="page">
+<a class="skip" href="#tier-1">Skip to the shelf</a>
+
+<!-- ---------- MASTHEAD (unchanged from Direction A) ---------- -->
+<div class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__logo" href="#">
+      <img src="educators-assets/83efe4dc-78e1-4f01-95c9-8ed84fc3d263.svg" alt="Build Submarines" width="170">
+    </a>
+    <nav class="masthead__nav">
+      <div class="masthead__links">
+        <a class="navlink" href="#">Our Mission</a>
+        <a class="navlink" href="#">Career Paths
+          <svg width="18" height="18" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M20 12.5L15 17.5L10 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+        </a>
+        <a class="navlink" href="#">Get Trained</a>
+        <a class="navlink is-active" href="#">Resources
+          <svg width="18" height="18" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M20 12.5L15 17.5L10 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+        </a>
+      </div>
+      <button class="navbtn navbtn--ghost" type="button">Create Employer Account</button>
+      <button class="navbtn navbtn--primary" type="button">Explore Open Roles</button>
+    </nav>
+  </div>
+</div>
+
+<!-- ---------- HERO ---------- -->
+<header class="hero" style="background-image:url('educators-assets/2b0d5656-b148-4aca-b532-a3515337cb5b.png')">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow hero__eyebrow">The Monday-ready shelf</p>
+      <h1 class="display">How much room<br>do you <em>actually</em><br>have?</h1>
+    </div>
+    <div>
+      <p class="hero__lede">
+        Everything below is sorted by one thing: what it costs you. Not by grade band,
+        not by file type &mdash; by whether you have fifteen minutes before first period,
+        a week, a term, or the appetite to bring the industry into the building.
+      </p>
+      <div class="hero__meta">
+        <span><strong>33</strong> resources</span>
+        <span><strong>16</strong> need no login</span>
+        <span><strong>3</strong> ship physical materials</span>
+        <span><strong>All</strong> free to educators</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---------- COMMITMENT LADDER (primary nav + anchor nav) ---------- -->
+<nav class="ladder" id="ladder" aria-label="Commitment ladder">
+  <div class="ladder__scroll">
+    <a class="step" href="#tier-1" data-step="1">
+      <span class="step__n">01</span>
+      <span class="step__label">Print and go</span>
+      <span class="step__cost">Under 15 min prep</span>
+    </a>
+    <a class="step" href="#tier-2" data-step="2">
+      <span class="step__n">02</span>
+      <span class="step__label">One class period</span>
+      <span class="step__cost">45&ndash;50 minutes</span>
+    </a>
+    <a class="step" href="#tier-3" data-step="3">
+      <span class="step__n">03</span>
+      <span class="step__label">One to two weeks</span>
+      <span class="step__cost">5&ndash;10 periods</span>
+    </a>
+    <a class="step" href="#tier-4" data-step="4">
+      <span class="step__n">04</span>
+      <span class="step__label">A term or a course</span>
+      <span class="step__cost">A semester or more</span>
+    </a>
+    <a class="step" href="#tier-5" data-step="5">
+      <span class="step__n">05</span>
+      <span class="step__label">A relationship</span>
+      <span class="step__cost">Ongoing, with people</span>
+    </a>
+  </div>
+  <div class="ladder__bar"><div class="ladder__fill" id="ladder-fill"></div></div>
+</nav>
+
+<main id="main">
+
+<!-- ============================================================
+     TIER 1
+     NOTE TO CONTENT: every prep-time and class-time value on this page
+     is a conservative planning estimate, not measured data. Confirm or
+     replace each one before this goes in front of educators.
+     ============================================================ -->
+<section class="tier t1" id="tier-1" aria-labelledby="t1-title">
+  <div class="tier__head">
+    <div class="tier__n" aria-hidden="true">01</div>
+    <div class="tier__titles">
+      <p class="eyebrow tier__eyebrow">Under 15 minutes prep</p>
+      <h2 class="tier__title" id="t1-title">Print <b>and go</b></h2>
+      <p class="tier__sub">
+        Open, print, walk in. Nothing here needs an account, a platform login or a
+        conversation with anyone. If today went sideways and you need something real
+        for the back half of the period, start on this shelf.
+      </p>
+      <p class="tier__count">8 items &middot; all PDF &middot; no login required</p>
+    </div>
+  </div>
+
+  <div class="chips">
+    <span class="chips__k">Filter</span>
+    <span class="chip">Elementary</span>
+    <span class="chip">Middle school</span>
+    <span class="chip">High school</span>
+    <span class="chip">CTE</span>
+    <span class="chip">Post-secondary</span>
+    <span class="chip">Take-home</span>
+  </div>
+
+  <div class="t1__grid">
+
+    <article class="sheet t1-a">
+      <div class="sheet__art"><img src="educators-assets/2f0905c9-1fd8-4e9a-bb73-36436e1703d5.png" alt="Fundamentals of Submarines and the Industrial Base deck cover" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">Fundamentals of Submarines &amp; the Industrial Base</h3>
+      <p class="sheet__d">The primer deck. Why the fleet is being built, who builds it, and what that means for a student sitting in your room right now.</p>
+      <p class="sheet__src">General Dynamics &middot; 24 slides</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">10 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Display or 20 min</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+    <article class="sheet t1-b">
+      <div class="sheet__art"><img src="educators-assets/a66532ee-6795-403e-aa68-ba83221a03ee.png" alt="A Family Guide to Understanding the Maritime Industrial Base cover" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">A Family Guide to the Maritime Industrial Base</h3>
+      <p class="sheet__d">Written for the people at the kitchen table, not the classroom. Send it home after a careers conversation.</p>
+      <p class="sheet__src">BlueForge Alliance &middot; take-home</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Take-home</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+    <aside class="t1-quote">
+      <div class="standfirst">
+        <p class="standfirst__k">On this shelf</p>
+        <p>Sixteen of these need <b>no account, no platform and no conversation.</b> Print them at 7:40, teach them at 8:05.</p>
+      </div>
+    </aside>
+
+    <article class="sheet t1-c">
+      <div class="sheet__art"><img src="educators-assets/7ba3c2a6-54df-4382-a2b5-abaecf8e3a44.png" alt="Color by Numbers submarine activity sheet" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">Color by Numbers</h3>
+      <p class="sheet__d">A first meeting with the submarine. An underwater picture appears as the numbers get filled in.</p>
+      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">15&ndash;20 min</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+    <article class="sheet t1-d">
+      <div class="sheet__art"><img src="educators-assets/fcf4dbbd-0611-467a-b1db-cc5bf74f45bf.png" alt="Submarines word search worksheet" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">Submarines Word Search</h3>
+      <p class="sheet__d">Twenty pieces of vocabulary, from ballast to starboard &mdash; the shared language before the real lesson.</p>
+      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">15 min</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+    <article class="sheet t1-e">
+      <div class="sheet__art"><img src="educators-assets/a49694ad-b2ff-4e25-8e9f-c8563c96693c.png" alt="Measurement worksheet with submarine silhouettes" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">Measurement Worksheet</h3>
+      <p class="sheet__d">Shipyard workers measure every day. Students measure four hulls and find out how close is close enough.</p>
+      <p class="sheet__src">Elementary &middot; K&ndash;5</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">25 min</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+    <article class="sheet t1-pack">
+      <div class="pack">
+        <div class="pack__count">05<small>Prints</small></div>
+        <div class="pack__stack">
+          <img src="educators-assets/bfb34ccc-2f97-43a5-9e5c-89225e1cdef7.png" alt="" loading="lazy">
+          <img src="educators-assets/4ba4a4de-7f3e-405a-9976-b8e921bcdb35.png" alt="" loading="lazy">
+          <img src="educators-assets/320bfb64-fdbf-4bbe-a310-467820f94e33.png" alt="ATDM engineering drawing pack" loading="lazy">
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge badge--nologin">No login required</span>
+        <span class="badge badge--partner">ATDM</span>
+      </div>
+      <h3 class="sheet__t">ATDM Engineering Drawing Pack</h3>
+      <p class="sheet__d">Five production prints with real GD&amp;T callouts, revision blocks and inspection notes &mdash; sail pulley, motor spacer bracket, slot assembly and two more. Shop-floor drawings, not textbook exercises.</p>
+      <p class="sheet__src">ATDM &middot; DWG + PDF &middot; CTE, post-secondary</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">15 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min each</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">DWG + PDF</span></div>
+      </div>
+    </article>
+
+    <article class="sheet t1-f">
+      <div class="sheet__art"><img src="educators-assets/07bdd1fe-75b4-4bc6-b1ff-13783f15bc35.png" alt="Machinist at a CNC control panel" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+      <h3 class="sheet__t">Posters, bifold, worksheets &amp; pathway handouts</h3>
+      <p class="sheet__d">The wall-and-table set: 11&times;17 recruitment posters, the double-sided manufacturing bifold, the Build Subs exploration worksheet, the skilled-trades handout and the academic-pathways comparison. Print once, use all year.</p>
+      <p class="sheet__src">BlueForge Alliance &middot; 5 documents</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">5&ndash;10 min</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Display &ndash; 20 min</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="escalate">
+    <span class="escalate__k">Next rung</span>
+    <a class="escalate__link" href="#tier-2">Have a whole period? Put a submarine engineer on the screen <span class="arw">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ TIER 2 -->
+<section class="tier t2 on-dark" id="tier-2" aria-labelledby="t2-title">
+  <div class="tier__head">
+    <div class="tier__n" aria-hidden="true">02</div>
+    <div class="tier__titles">
+      <p class="eyebrow tier__eyebrow">One class period</p>
+      <h2 class="tier__title" id="t2-title">Forty-five minutes,<br><b>start to finish</b></h2>
+      <p class="tier__sub">
+        A complete arc inside one bell: hook, content, discussion, out. Each of these
+        arrives as a lesson plan with the media already attached &mdash; nothing to assemble
+        the night before.
+      </p>
+      <p class="tier__count">5 items &middot; lesson plans, video, slides</p>
+    </div>
+  </div>
+
+  <div class="t2__band" style="background-image:url('educators-assets/52e0dccf-92e8-48cf-afa6-393514ff0c37.png')">
+    <p class="t2__bandtxt">
+      <b>Ask an Expert</b>
+      Submarine technologists answer the questions students actually ask &mdash; how deep,
+      how quiet, how do you not run out of air. Queue it up, pause where it gets good.
+    </p>
+  </div>
+
+  <div class="chips">
+    <span class="chips__k">Filter</span>
+    <span class="chip">Middle school</span>
+    <span class="chip">High school</span>
+    <span class="chip">CTE</span>
+    <span class="chip">Video</span>
+    <span class="chip">Slides</span>
+    <span class="chip">Discussion</span>
+  </div>
+
+  <div class="t2__split">
+
+    <article class="feature2">
+      <div class="feature2__art">
+        <span class="feature2__play">&#9654;&nbsp; Video + lesson plan</span>
+        <img src="educators-assets/beb05e1b-26e5-45af-ac80-f14377eca8c1.png" alt="Shipyard worker under inspection lighting" loading="lazy">
+      </div>
+      <div class="feature2__body">
+        <div class="badges">
+          <span class="badge badge--nologin">No login required</span>
+          <span class="badge badge--partner">General Dynamics</span>
+        </div>
+        <h3 class="feature2__t">Medal of Honor:<br>two lessons, two films</h3>
+        <p class="feature2__d">
+          Paired sets &mdash; a short film and the lesson plan built around it. Students meet
+          the people the citation is about, then work through what the decision actually
+          cost. The strongest single-period material on this site, and the one teachers
+          come back for.
+        </p>
+        <div class="facts">
+          <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">15 min</span></div>
+          <div class="fact"><span class="fact__k">Class</span><span class="fact__v">50 min each</span></div>
+          <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Video + PDF</span></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="stack2">
+
+      <article class="row2">
+        <div class="row2__art"><img src="educators-assets/d6ff85fe-b320-4658-9956-a68bd5b2a5b8.png" alt="" loading="lazy"></div>
+        <div class="row2__body">
+          <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+          <h3 class="row2__t">Ask an Expert: Submarine Technology</h3>
+          <p class="row2__d">A working technologist takes the questions. Comes with a discussion guide and five pause points.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">10 min</span></div>
+            <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
+            <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Video + PDF</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="row2">
+        <div class="row2__art"><img src="educators-assets/be365835-3111-4c40-b007-bcead6629c25.png" alt="" loading="lazy"></div>
+        <div class="row2__body">
+          <div class="badges"><span class="badge badge--partner">Craftsman with Character</span></div>
+          <h3 class="row2__t">Craftsman with Character &mdash; 45-minute lesson</h3>
+          <p class="row2__d">The single-period cut of the full course. Craft, accountability and what it means to sign your work.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">15 min</span></div>
+            <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
+            <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF + slides</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="row2">
+        <div class="row2__art"><img src="educators-assets/a49694ad-b2ff-4e25-8e9f-c8563c96693c.png" alt="" loading="lazy"></div>
+        <div class="row2__body">
+          <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+          <h3 class="row2__t">SIB Submarine Lesson Plan</h3>
+          <p class="row2__d">Systems thinking through one hull: buoyancy, propulsion, life support and the trade-offs between them.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">15 min</span></div>
+            <div class="fact"><span class="fact__k">Class</span><span class="fact__v">50 min</span></div>
+            <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="row2">
+        <div class="row2__art"><img src="educators-assets/2f0905c9-1fd8-4e9a-bb73-36436e1703d5.png" alt="" loading="lazy"></div>
+        <div class="row2__body">
+          <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+          <h3 class="row2__t">Fundamentals of Submarines &mdash; speaker deck</h3>
+          <p class="row2__d">The primer deck with speaker notes, built to be delivered cold by someone who is not a naval engineer.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">10 min</span></div>
+            <div class="fact"><span class="fact__k">Class</span><span class="fact__v">45 min</span></div>
+            <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Slides</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="escalate">
+    <span class="escalate__k">Next rung</span>
+    <a class="escalate__link" href="#tier-3">Ready for a real run? Two of these ship boxes to your room <span class="arw">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ TIER 3 -->
+<section class="tier t3" id="tier-3" aria-labelledby="t3-title">
+  <div class="tier__head">
+    <div class="tier__n" aria-hidden="true">03</div>
+    <div class="tier__titles">
+      <p class="eyebrow tier__eyebrow">One to two weeks</p>
+      <h2 class="tier__title" id="t3-title">A run with<br><b>something to hold</b></h2>
+      <p class="tier__sub">
+        Multi-lesson sequences that build. Two of the four ship physical materials to
+        your classroom at no cost &mdash; the strongest offer on this site and, until now,
+        the hardest to find.
+      </p>
+      <p class="tier__count">4 sequences &middot; 5&ndash;10 class periods each</p>
+    </div>
+  </div>
+
+  <div class="chips">
+    <span class="chips__k">Filter</span>
+    <span class="chip">Elementary</span>
+    <span class="chip">Middle school</span>
+    <span class="chip">High school</span>
+    <span class="chip">CTE</span>
+    <span class="chip">Kit included</span>
+  </div>
+
+  <div class="spread--full">
+    <article class="spread">
+      <div class="spread__art">
+        <span class="spread__flag">Materials shipped &mdash; free</span>
+        <img src="educators-assets/165cadd3-81e7-41d2-8227-4309298af673.png" alt="Student building a hull section on a shop floor" loading="lazy">
+      </div>
+      <div class="spread__body">
+        <p class="eyebrow spread__eyebrow">Five class periods</p>
+        <h3 class="spread__t">Boats for Explorers</h3>
+        <p class="spread__d">
+          Students design, build and test a hull that has to carry a load and stay dry.
+          Five lessons of iteration, with a failure step built in on purpose. The
+          materials arrive in a box &mdash; you supply water and a table.
+        </p>
+        <div class="spread__ship">
+          <span>&#128230;</span>
+          <span><b>What arrives:</b> a classroom kit for up to 30 students &mdash; hull materials, ballast, test weights, teacher guide and student journals. No cost, no shipping charge.</span>
+        </div>
+        <div class="badges">
+          <span class="badge badge--ship">Materials shipped</span>
+          <span class="badge badge--free">Free</span>
+          <span class="badge badge--partner">Request form</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">45 min once</span></div>
+          <div class="fact"><span class="fact__k">Class</span><span class="fact__v">5 periods</span></div>
+          <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Kit + PDF</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="spread spread--flip">
+      <div class="spread__art">
+        <span class="spread__flag">Materials shipped &mdash; free</span>
+        <img src="educators-assets/81f8c3c7-208d-44cc-a817-1f2d7228c7c5.png" alt="Welder at work with sparks" loading="lazy">
+      </div>
+      <div class="spread__body">
+        <p class="eyebrow spread__eyebrow">Eight class periods &middot; CTE</p>
+        <h3 class="spread__t">Production Instruction:<br>Anatomy of a Weld</h3>
+        <p class="spread__d">
+          Toe, leg, face, throat and fusion zone on a labelled fillet weld &mdash; then the
+          shop-theory hour that makes the labels mean something. Built with the people
+          who train the welders now building the fleet.
+        </p>
+        <div class="spread__ship">
+          <span>&#128230;</span>
+          <span><b>What arrives:</b> coupon samples, weld-inspection gauges, the labelled cutaway poster set and the instructor curriculum. Requires a shop with existing weld capability.</span>
+        </div>
+        <div class="badges">
+          <span class="badge badge--ship">Materials shipped</span>
+          <span class="badge badge--free">Free</span>
+          <span class="badge badge--partner">Production Instruction</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">60 min once</span></div>
+          <div class="fact"><span class="fact__k">Class</span><span class="fact__v">8 periods</span></div>
+          <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Kit + curriculum</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="t3__pair">
+    <article class="mini">
+      <div class="mini__art"><img src="educators-assets/b0506663-ad9f-420d-b378-7e681a73f35e.png" alt="" loading="lazy"></div>
+      <div class="mini__body">
+        <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+        <h3 class="mini__t">Boat for Kids &mdash; six-lesson sequence</h3>
+        <p class="mini__d">The elementary cut of the build-and-test arc. Same engineering habit, smaller hands, more glue.</p>
+        <div class="facts">
+          <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">30 min</span></div>
+          <div class="fact"><span class="fact__k">Class</span><span class="fact__v">6 periods</span></div>
+          <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="mini">
+      <div class="mini__art"><img src="educators-assets/92965a82-5f36-4b0b-9731-a0a5702da59a.png" alt="" loading="lazy"></div>
+      <div class="mini__body">
+        <div class="badges"><span class="badge badge--nologin">No login required</span></div>
+        <h3 class="mini__t">Maritime Marvels &mdash; ten lessons</h3>
+        <p class="mini__d">Ten self-contained lessons on the engineering of the fleet. Run them in order or pull the three you need.</p>
+        <div class="facts">
+          <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">40 min</span></div>
+          <div class="fact"><span class="fact__k">Class</span><span class="fact__v">10 periods</span></div>
+          <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="escalate">
+    <span class="escalate__k">Next rung</span>
+    <a class="escalate__link" href="#tier-4">Teaching this as a course? Eight programs go the full term <span class="arw">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ TIER 4 -->
+<section class="tier t4 on-dark" id="tier-4" aria-labelledby="t4-title">
+  <div class="tier__head">
+    <div class="tier__n" aria-hidden="true">04</div>
+    <div class="tier__titles">
+      <p class="eyebrow tier__eyebrow">A term or a course</p>
+      <h2 class="tier__title" id="t4-title">Programs that carry<br><b>a whole semester</b></h2>
+      <p class="tier__sub">
+        Full curricula with scope, sequence and support behind them. Most involve a
+        partner platform and an account &mdash; which is the trade for someone else having
+        already done the pacing.
+      </p>
+      <p class="tier__count">8 programs &middot; partner platforms &middot; account required</p>
+    </div>
+  </div>
+
+  <div class="chips">
+    <span class="chips__k">Filter</span>
+    <span class="chip">TK&ndash;12</span>
+    <span class="chip">Middle school</span>
+    <span class="chip">High school</span>
+    <span class="chip">CTE</span>
+    <span class="chip">Post-secondary</span>
+    <span class="chip">Platform login</span>
+  </div>
+
+  <div class="t4__index">
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">01</span>
+      <span class="srow__t">JA Maritime</span>
+      <span class="srow__d">Thirteen lessons from Junior Achievement mapping the maritime economy onto work students can picture themselves doing.</span>
+      <span class="srow__meta"><span class="srow__len">13 lessons</span><span class="srow__arrives">Platform login</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/be365835-3111-4c40-b007-bcead6629c25.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">02</span>
+      <span class="srow__t">Learning Blade</span>
+      <span class="srow__d">Standards-aligned STEM missions with a maritime track. Runs alongside an existing course rather than replacing it.</span>
+      <span class="srow__meta"><span class="srow__len">Full term</span><span class="srow__arrives">Platform login</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/d6ff85fe-b320-4658-9956-a68bd5b2a5b8.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">03</span>
+      <span class="srow__t">Maritime Education Hub</span>
+      <span class="srow__d">The clearinghouse: curriculum, credentials and regional programs in one account, updated as partners add material.</span>
+      <span class="srow__meta"><span class="srow__len">Ongoing</span><span class="srow__arrives">Platform login</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/07bdd1fe-75b4-4bc6-b1ff-13783f15bc35.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">04</span>
+      <span class="srow__t">Maritime Manufacturing TK&ndash;12</span>
+      <span class="srow__d">A vertical scope-and-sequence: the same industry revisited at every grade band, deepening each time.</span>
+      <span class="srow__meta"><span class="srow__len">TK&ndash;12 scope</span><span class="srow__arrives">Platform login</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/cef8e09b-e1a4-4864-bd4c-9854def13efb.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">05</span>
+      <span class="srow__t">Craftsman with Character</span>
+      <span class="srow__d">The full course behind the 45-minute lesson. Craft, ownership and the standards a signature implies.</span>
+      <span class="srow__meta"><span class="srow__len">Full course</span><span class="srow__arrives">Curriculum</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/beb05e1b-26e5-45af-ac80-f14377eca8c1.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">06</span>
+      <span class="srow__t">STEM&#8202;+&#8202;M</span>
+      <span class="srow__d">STEM with manufacturing added as a fourth leg &mdash; the making, not only the maths and the science.</span>
+      <span class="srow__meta"><span class="srow__len">Full term</span><span class="srow__arrives">Curriculum</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/92965a82-5f36-4b0b-9731-a0a5702da59a.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">07</span>
+      <span class="srow__t">Production Instruction &mdash; with kits</span>
+      <span class="srow__d">The full CTE programme, materials shipped each term. The deepest partnership on this list short of a person in the room.</span>
+      <span class="srow__meta"><span class="srow__len">Full course</span><span class="srow__arrives">Kits + curriculum</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/4b334084-4fd2-4989-95c4-b21820e1554c.png" alt="" loading="lazy"></span>
+    </a>
+
+    <a class="srow" href="#tier-5">
+      <span class="srow__n">08</span>
+      <span class="srow__t">Boats for Next Gen</span>
+      <span class="srow__d">The term-length build programme: design, fabricate, test and defend, with an industry review at the end.</span>
+      <span class="srow__meta"><span class="srow__len">Full term</span><span class="srow__arrives">Kit + curriculum</span></span>
+      <span class="srow__peek" aria-hidden="true"><img src="educators-assets/165cadd3-81e7-41d2-8227-4309298af673.png" alt="" loading="lazy"></span>
+    </a>
+
+  </div>
+
+  <div class="escalate">
+    <span class="escalate__k">Next rung</span>
+    <a class="escalate__link" href="#tier-5">The last one is not a download. It is a phone call <span class="arw">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ TIER 5 -->
+<section class="tier t5 on-dark" id="tier-5" aria-labelledby="t5-title">
+  <div class="t5__hero" style="background-image:url('educators-assets/b0506663-ad9f-420d-b378-7e681a73f35e.png')">
+    <div class="t5__heroin">
+      <div>
+        <div class="tier__n" style="font-size:clamp(3rem,8vw,7rem);margin-bottom:.5rem" aria-hidden="true">05</div>
+        <p class="eyebrow tier__eyebrow">A relationship</p>
+        <h2 id="t5-title">Bring the industry <b>into the building</b></h2>
+      </div>
+      <p>
+        The last rung is people. Speakers who have built the thing, partners down the
+        road, grants that pay for the camp, and a funding guide for the part nobody
+        wants to ask about. This is where a lesson becomes a pipeline.
+      </p>
+    </div>
+  </div>
+
+  <div class="chips">
+    <span class="chips__k">Filter</span>
+    <span class="chip">Speakers</span>
+    <span class="chip">Site visits</span>
+    <span class="chip">Professional development</span>
+    <span class="chip">Grants</span>
+    <span class="chip">Regional</span>
+  </div>
+
+  <div class="t5__grid">
+
+    <article class="rel rel--wide">
+      <div class="rel__art"><img src="educators-assets/cef8e09b-e1a4-4864-bd4c-9854def13efb.png" alt="Shop floor at a submarine industrial base facility" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--partner">Scheduled &middot; people</span></div>
+      <h3 class="rel__t">Guest speaker panels &amp; career fairs</h3>
+      <p class="rel__d">
+        Welders, designers, quality inspectors and programme managers who will stand in
+        front of your students and answer the question nobody asks a poster: what is it
+        actually like. Booked through the regional partner nearest you &mdash; typically
+        three to six weeks out.
+      </p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Lead time</span><span class="fact__v">3&ndash;6 weeks</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">1&ndash;2 periods</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">A person</span></div>
+      </div>
+    </article>
+
+    <article class="rel">
+      <div class="badges"><span class="badge badge--partner">Regional</span></div>
+      <h3 class="rel__t">Regional industry partners</h3>
+      <p class="rel__d">Find the suppliers, yards and training centres in your area &mdash; the ones close enough for a site visit on a school bus.</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Lead time</span><span class="fact__v">2&ndash;4 weeks</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Site visit</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Introduction</span></div>
+      </div>
+    </article>
+
+    <article class="rel">
+      <div class="badges"><span class="badge badge--partner">Mfg Dream Team</span></div>
+      <h3 class="rel__t">Mfg Dream Team</h3>
+      <p class="rel__d">A standing roster of manufacturing professionals who visit classrooms &mdash; recurring, not one-off.</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Lead time</span><span class="fact__v">4 weeks</span></div>
+        <div class="fact"><span class="fact__k">Class</span><span class="fact__v">Recurring</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">A person</span></div>
+      </div>
+    </article>
+
+    <article class="rel">
+      <div class="rel__art"><img src="educators-assets/3fe604a6-890a-4db3-9b82-598afe03b291.png" alt="Building Tomorrow's Workforce webinar title slide" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--free">Free</span><span class="badge badge--partner">Battelle</span></div>
+      <h3 class="rel__t">Battelle Teacher Academy</h3>
+      <p class="rel__d">Professional development for you, not your students. A week inside the industry, then a cohort that stays in touch.</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Lead time</span><span class="fact__v">Seasonal</span></div>
+        <div class="fact"><span class="fact__k">Time</span><span class="fact__v">1 week, summer</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">A place</span></div>
+      </div>
+    </article>
+
+    <article class="rel">
+      <div class="badges"><span class="badge badge--grant">Grant-funded</span></div>
+      <h3 class="rel__t">SparkForce camp grants</h3>
+      <p class="rel__d">Funding to run a maritime summer camp in your district. Applications open ahead of each season.</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Lead time</span><span class="fact__v">Application</span></div>
+        <div class="fact"><span class="fact__k">Time</span><span class="fact__v">Summer camp</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">Funding</span></div>
+      </div>
+    </article>
+
+    <article class="rel">
+      <div class="rel__art"><img src="educators-assets/a84fa0d2-fd9f-448d-bb5e-b50fd065a603.png" alt="Building Partnerships guide cover" loading="lazy"></div>
+      <div class="badges"><span class="badge badge--nologin">No login required</span><span class="badge badge--free">Free</span></div>
+      <h3 class="rel__t">Funding Source Guide</h3>
+      <p class="rel__d">Where the money is: Perkins, state CTE allocations, workforce boards and industry grants, with who to ask and when.</p>
+      <div class="facts">
+        <div class="fact"><span class="fact__k">Prep</span><span class="fact__v">Reference</span></div>
+        <div class="fact"><span class="fact__k">Time</span><span class="fact__v">Self-serve</span></div>
+        <div class="fact"><span class="fact__k">Arrives</span><span class="fact__v">PDF</span></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="cta">
+    <div>
+      <p class="eyebrow tier__eyebrow">One form, everything above</p>
+      <h3>Tell us what your room needs.<br>We will bring the rest.</h3>
+      <p>
+        Kits, prints and guides ship to your school at no cost. Digital resources arrive
+        the same day. Speakers and site visits get routed to the partner nearest you.
+        One form covers all five rungs &mdash; you will not be asked to fill it in again.
+      </p>
+    </div>
+    <form class="cta__form" id="request-form" novalidate>
+      <label for="rf-name">Your name</label>
+      <input id="rf-name" name="name" type="text" placeholder="Jane Okafor" autocomplete="name">
+      <label for="rf-school">School or district</label>
+      <input id="rf-school" name="school" type="text" placeholder="Groton Public Schools" autocomplete="organization">
+      <label for="rf-rung">What are you after?</label>
+      <select id="rf-rung" name="rung">
+        <option>01 &mdash; Something to print today</option>
+        <option>02 &mdash; A single class period</option>
+        <option>03 &mdash; A one to two week run</option>
+        <option>04 &mdash; A term-length programme</option>
+        <option selected>05 &mdash; A speaker or a partner</option>
+      </select>
+      <button class="cta__btn" type="submit">Request access</button>
+      <p class="cta__note" id="rf-note">Prototype form &mdash; nothing is submitted or stored.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ---------- FOOTER (unchanged from Direction A) ---------- -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <img class="site-footer__logo" src="educators-assets/ab566357-0886-4824-807e-bc194599883d.svg" alt="Build Submarines">
+    <div class="site-footer__links">
+      <a href="#">The Mission</a>
+      <a href="#">Career Paths</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Opportunities</a>
+      <a href="#">Newsroom</a>
+      <a href="#">Training Partner</a>
+    </div>
+  </div>
+  <div class="site-footer__rule"></div>
+  <div class="site-footer__bottom">
+    <div class="site-footer__legalcol">
+      <div class="site-footer__copy">Copyright 2026 BuildSubmarines.com. All rights reserved.</div>
+      <div class="site-footer__funding">Paid for by the U.S. Department of the Navy in partnership with BlueForge Alliance</div>
+    </div>
+    <div class="site-footer__legal">
+      <a href="#">Privacy Notice</a>
+      <a href="#">Terms and Conditions</a>
+    </div>
+    <div class="site-footer__social">
+      <a href="#" aria-label="Facebook"><img src="educators-assets/icons/social-facebook.svg" alt=""></a>
+      <a href="#" aria-label="LinkedIn"><img src="educators-assets/icons/social-linkedin.svg" alt=""></a>
+      <a href="#" aria-label="Instagram"><img src="educators-assets/icons/social-instagram.svg" alt=""></a>
+      <a href="#" aria-label="X"><img src="educators-assets/icons/social-x.svg" alt=""></a>
+      <a href="#" aria-label="Email"><img src="educators-assets/icons/social-email.svg" alt=""></a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.page -->
+
+<!-- dc-gate:start -->
+<script>
+(function(){
+  var gate  = document.getElementById('dc-gate');
+  var card  = document.getElementById('dc-gate-card');
+  var form  = document.getElementById('dc-gate-form');
+  var user  = document.getElementById('dc-gate-user');
+  var pw    = document.getElementById('dc-gate-pw');
+  var error = document.getElementById('dc-gate-error');
+
+  if (!document.documentElement.classList.contains('dc-gated')) {
+    gate.parentNode.removeChild(gate);
+    return;
+  }
+
+  setTimeout(function(){ user.focus(); }, 60);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Login accepts any value; only the password is checked.
+    if (pw.value === '$ubs') {
+      try { sessionStorage.setItem('bs-educators-b-auth', '1'); } catch (err) {}
+      document.documentElement.classList.remove('dc-gated');
+      gate.parentNode.removeChild(gate);
+      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('scroll'));
+    } else {
+      card.classList.add('is-error');
+      error.hidden = false;
+      pw.select();
+    }
+  });
+
+  pw.addEventListener('input', function(){
+    card.classList.remove('is-error');
+    error.hidden = true;
+  });
+})();
+</script>
+<!-- dc-gate:end -->
+
+<script>
+/* ---------------------------------------------------------------
+   Commitment ladder: mark the rung you are standing on and fill the
+   progress hairline as the page is climbed. Anchor navigation works
+   without this; the script only adds the current-state feedback.
+   --------------------------------------------------------------- */
+(function(){
+  var steps    = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var fill     = document.getElementById('ladder-fill');
+  var sections = steps.map(function(s){ return document.querySelector(s.getAttribute('href')); });
+  if (!steps.length || sections.indexOf(null) > -1) return;
+
+  var CHROME = 160; // masthead + ladder, the line a section top has to cross
+
+  function update(){
+    // While the gate is up the page is display:none and every offsetTop
+    // reads 0, which would light the last rung. Wait until it is visible.
+    if (document.documentElement.classList.contains('dc-gated')) return;
+
+    var line = window.pageYOffset + CHROME;
+    var current = -1;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop <= line) current = i;
+    }
+    for (var j = 0; j < steps.length; j++) {
+      steps[j].classList.toggle('is-current', j === current);
+    }
+
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? Math.min(1, Math.max(0, window.pageYOffset / max)) : 0;
+    fill.style.width = (pct * 100).toFixed(2) + '%';
+  }
+
+  // update() walks five elements, so it is cheap enough to run unthrottled.
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+
+  // An observer on the tier sections drives the same update independently of
+  // scroll events: it fires on its own as sections cross the chrome line, so
+  // the current rung stays right even where scroll events are unreliable
+  // (in-app webviews, automated browsers) or the page is restored from bfcache.
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(update, {
+      rootMargin: '-' + CHROME + 'px 0px 0px 0px',
+      threshold: [0, 0.01, 0.5, 0.99, 1]
+    });
+    sections.forEach(function(sec){ io.observe(sec); });
+  }
+
+  window.addEventListener('pageshow', update);
+  update();
+})();
+
+/* Prototype request form — no endpoint, so acknowledge in place. */
+(function(){
+  var form = document.getElementById('request-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var note = document.getElementById('rf-note');
+    var btn  = form.querySelector('.cta__btn');
+    btn.textContent = 'Request received';
+    btn.disabled = true;
+    btn.style.background = 'var(--highlight-lime)';
+    note.textContent = 'Prototype only — nothing was submitted or stored.';
+  });
+})();
+</script>
+
+</body>
+</html>
