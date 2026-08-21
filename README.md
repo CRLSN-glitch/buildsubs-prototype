@@ -5,7 +5,7 @@ Static site, no build step required.
 ## Pages
 - `index.html` — Login screen (password: Alabama)
 - `training-programs.html` — Training programs prototype
-- `educators.html` — Education / Resources for Educators redesign (assets in `educators-assets/`)
+- `educators.html` — Education / Resources for Educators redesign, gated by a login lightbox (login: anything, password: $ubs); assets in `educators-assets/`
 
 ## Deploy
 Connected to Vercel via GitHub integration. Every push to `main` triggers a production deploy automatically.

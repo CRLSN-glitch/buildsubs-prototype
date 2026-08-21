@@ -1,5 +1,61 @@
 <!DOCTYPE html>
 <html><head>
+<!-- dc-gate:start -->
+<title>BuildSubmarines &middot; Resources for Educators</title>
+<style>
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/4826483d-b0cf-4334-8d1c-90ed93162bd6.otf") format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/553f4dab-df21-4654-a0e9-e7e786708a3d.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/4c9a5210-fe5f-462b-be9c-b84d4ca364e2.otf") format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Gomme Sans';src:url("educators-assets/f5340ff2-7ead-42a0-a193-c71727f3c007.otf") format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url("educators-assets/db0c6dac-389d-49cb-b550-f25f73638327.otf") format('opentype');font-weight:400;font-style:normal;font-display:swap}
+
+html.dc-gated,html.dc-gated body{overflow:hidden!important}
+html.dc-gated x-dc,html.dc-gated #dc-root{display:none!important}
+#dc-gate{display:none}
+html.dc-gated #dc-gate{display:flex}
+
+#dc-gate{
+  position:fixed;inset:0;z-index:2147483647;
+  align-items:center;justify-content:center;padding:24px;
+  background:#002d3e;color:#fff;
+  font-family:'Gotham',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+#dc-gate *{box-sizing:border-box}
+#dc-gate .g-card{width:100%;max-width:320px;text-align:center}
+#dc-gate .g-logo{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1;margin-bottom:30px}
+#dc-gate .g-logo-top{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:700;font-size:22px;letter-spacing:3.2px;color:#50ad9a;text-transform:uppercase}
+#dc-gate .g-logo-main{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:2.2px;text-transform:uppercase}
+#dc-gate .g-title{font-family:'Gomme Sans',system-ui,sans-serif;font-weight:300;font-size:27px;line-height:1.3;margin:0 0 8px}
+#dc-gate .g-sub{font-size:13px;line-height:1.5;color:rgba(255,255,255,.8);margin:0 0 22px}
+#dc-gate form{display:flex;flex-direction:column;gap:12px}
+#dc-gate .g-input{
+  width:100%;font-family:'Gotham',system-ui,sans-serif;font-size:16px;color:#fff;
+  padding:13px 16px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.4);border-radius:10px;outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+#dc-gate .g-input::placeholder{color:rgba(255,255,255,.55)}
+#dc-gate .g-input:focus{border-color:#3fccca;box-shadow:0 0 0 3px rgba(63,204,202,.25)}
+#dc-gate .g-card.is-error .g-input[type=password]{border-color:#ff8a8a;box-shadow:0 0 0 3px rgba(255,138,138,.2)}
+#dc-gate .g-btn{
+  width:100%;height:48px;background:#3fccca;border:0;border-radius:10px;cursor:pointer;
+  font-family:'Gomme Sans',system-ui,sans-serif;font-weight:400;font-size:16px;color:#181818;
+  transition:transform .14s cubic-bezier(.23,1,.32,1),filter .2s ease;
+}
+#dc-gate .g-btn:active{transform:scale(.98)}
+@media (hover:hover) and (pointer:fine){#dc-gate .g-btn:hover{filter:brightness(1.06)}}
+#dc-gate .g-error{font-size:12px;color:#ffb4b4;margin:2px 0 0;min-height:1em}
+@media (prefers-reduced-motion:reduce){#dc-gate .g-btn{transition:none}}
+</style>
+<script>
+(function(){
+  var ok = false;
+  try { ok = sessionStorage.getItem('bs-educators-auth') === '1'; } catch (e) {}
+  if (!ok) document.documentElement.classList.add('dc-gated');
+})();
+</script>
+<!-- dc-gate:end -->
 <script>window.__resources = {"img5": "educators-assets/320bfb64-fdbf-4bbe-a310-467820f94e33.png", "img7": "educators-assets/86ded2f6-3a01-49d0-a8cf-27d14e4a04da.png", "img94": "educators-assets/a49694ad-b2ff-4e25-8e9f-c8563c96693c.png", "logoDark": "educators-assets/83efe4dc-78e1-4f01-95c9-8ed84fc3d263.svg", "socX": "educators-assets/06b83cff-23ec-477d-8e0d-b248bc8a9da1.svg", "socEmail": "educators-assets/1d9e02bf-d4e6-44ab-91c0-768be80e1d73.svg", "socInstagram": "educators-assets/a9cf008a-55c8-43f0-ae3f-fae5079e15f1.svg", "logoWhite": "educators-assets/ab566357-0886-4824-807e-bc194599883d.svg", "socFacebook": "educators-assets/76906012-ebdf-47bd-8800-90728aa13d95.svg", "socLinkedin": "educators-assets/fe63d574-c838-4e95-963b-256018b51de8.svg", "img90": "educators-assets/7ba3c2a6-54df-4382-a2b5-abaecf8e3a44.png", "img89": "educators-assets/fcf4dbbd-0611-467a-b1db-cc5bf74f45bf.png", "img9": "educators-assets/4ba4a4de-7f3e-405a-9976-b8e921bcdb35.png", "img142": "educators-assets/a84fa0d2-fd9f-448d-bb5e-b50fd065a603.png", "shot1": "educators-assets/bfb34ccc-2f97-43a5-9e5c-89225e1cdef7.png", "img46": "educators-assets/4b334084-4fd2-4989-95c4-b21820e1554c.png", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "educators-assets/f1a8d052-5d4f-49fa-a1c0-2e0a922f3274.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "educators-assets/d57bc209-8ba3-41b0-8256-8c2893af7240.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +79,63 @@
 
 </head>
 <body>
+<!-- dc-gate:start -->
+<div id="dc-gate" role="dialog" aria-modal="true" aria-labelledby="dc-gate-title">
+  <div class="g-card" id="dc-gate-card">
+    <div class="g-logo">
+      <span class="g-logo-top">Build</span>
+      <span class="g-logo-main">Submarines.com</span>
+    </div>
+    <h1 class="g-title" id="dc-gate-title">Prototype access</h1>
+    <p class="g-sub">Sign in to view the educator resources prototype.</p>
+    <form id="dc-gate-form" autocomplete="off">
+      <input class="g-input" id="dc-gate-user" type="text" placeholder="Login" aria-label="Login"
+             autocomplete="off" autocapitalize="none" spellcheck="false">
+      <input class="g-input" id="dc-gate-pw" type="password" placeholder="Password" aria-label="Password"
+             autocomplete="off" autocapitalize="none" spellcheck="false">
+      <button class="g-btn" type="submit">Enter</button>
+      <p class="g-error" id="dc-gate-error" hidden>Incorrect password. Try again.</p>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var gate  = document.getElementById('dc-gate');
+  var card  = document.getElementById('dc-gate-card');
+  var form  = document.getElementById('dc-gate-form');
+  var user  = document.getElementById('dc-gate-user');
+  var pw    = document.getElementById('dc-gate-pw');
+  var error = document.getElementById('dc-gate-error');
+
+  if (!document.documentElement.classList.contains('dc-gated')) {
+    gate.parentNode.removeChild(gate);
+    return;
+  }
+
+  setTimeout(function(){ user.focus(); }, 60);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Login accepts any value; only the password is checked.
+    if (pw.value === '$ubs') {
+      try { sessionStorage.setItem('bs-educators-auth', '1'); } catch (err) {}
+      document.documentElement.classList.remove('dc-gated');
+      gate.parentNode.removeChild(gate);
+      window.dispatchEvent(new Event('resize'));
+    } else {
+      card.classList.add('is-error');
+      error.hidden = false;
+      pw.select();
+    }
+  });
+
+  pw.addEventListener('input', function(){
+    card.classList.remove('is-error');
+    error.hidden = true;
+  });
+})();
+</script>
+<!-- dc-gate:end -->
 <x-dc>
 <helmet>
   <style>/* Gomme Sans — the brand display/UI face. Shipped as OTF from the brand font package. */
