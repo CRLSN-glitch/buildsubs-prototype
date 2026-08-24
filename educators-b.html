@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BuildSubmarines &middot; The Monday-Ready Shelf</title>
-<meta name="description" content="Classroom resources for the maritime industrial base, sorted by what they cost you: one period, one week, one unit, one term, or a lasting industry relationship.">
+<meta name="description" content="Classroom resources for the maritime industrial base, sorted by what they cost you: one period, one week, one unit, one term, or a lasting industry partnership.">
 
 <!-- ============================================================
      FONTS — Gomme Sans (display) + Gotham (body), same OTFs
@@ -47,7 +47,7 @@
   --paper:#f2f0ec;          /* warm newsprint for the light spreads */
   --paper-2:#e6e3dd;
   --rule:#181818;
-  --wash-white-10:#ffffff1a; --hairline-light:#dbdbdb33;
+  --wash-white-10:#ffffff1a; --wash-dark-10:#1818181a; --hairline-light:#dbdbdb33;
   /* Type */
   --font-display:'Gomme Sans','Arial Narrow',Arial,sans-serif;
   --font-body:'Gotham','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -337,12 +337,11 @@ html.dc-gated #dc-gate{display:flex}
 .tier__n{
   font-family:var(--font-display);font-weight:200;line-height:.78;
   font-size:clamp(4.5rem,13vw,12rem);letter-spacing:-.04em;
-  /* currentColor here would resolve to this rule's own transparent `color`,
-     leaving the stroke invisible — both tones are stated explicitly. */
-  -webkit-text-stroke:1px #181818a6;color:transparent;
-  opacity:.85;
+  /* Solid, low-contrast fill rather than an outline — present as a
+     watermark, not competing with the heading it sits beside. */
+  color:var(--wash-dark-10);
 }
-.on-dark .tier__n{-webkit-text-stroke-color:#ffffff8c}
+.on-dark .tier__n{color:var(--wash-white-10)}
 .tier__titles{padding-top:clamp(.5rem,1.5vw,1.25rem);min-width:0}
 .tier__eyebrow{color:var(--deep-green);margin-bottom:.85rem}
 .on-dark .tier__eyebrow{color:var(--green-mist)}
@@ -640,7 +639,7 @@ html.dc-gated #dc-gate{display:flex}
 </style>
 
 <!-- ============================================================
-     TIER 5 — "THE RELATIONSHIP"
+     TIER 5 — "THE PARTNERSHIP"
      The business goal. Full-bleed photography, people-first cards and
      the page's strongest call to action.
      ============================================================ -->
@@ -842,7 +841,7 @@ html.dc-gated #dc-gate{display:flex}
     </a>
     <a class="step" href="#tier-5" data-step="5">
       <span class="step__n">05</span>
-      <span class="step__label">A relationship</span>
+      <span class="step__label">A partnership</span>
       <span class="step__cost">Ongoing, with people</span>
     </a>
   </div>
@@ -1294,7 +1293,7 @@ html.dc-gated #dc-gate{display:flex}
     <div class="t5__heroin">
       <div>
         <div class="tier__n" style="font-size:clamp(3rem,8vw,7rem);margin-bottom:.5rem" aria-hidden="true">05</div>
-        <p class="eyebrow tier__eyebrow">A relationship</p>
+        <p class="eyebrow tier__eyebrow">A partnership</p>
         <h2 id="t5-title">Stepping <b>outside the classroom</b></h2>
       </div>
       <p>
