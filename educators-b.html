@@ -425,7 +425,11 @@ html.dc-gated #dc-gate{display:flex}
   border-top:2px solid var(--ink);padding-top:1.25rem;
   display:flex;flex-direction:column;gap:1rem;
 }
-.standfirst p{
+/* :not() keeps this from also matching .standfirst__k below — both are <p>
+   elements, and a bare ".standfirst p" descendant selector (specificity
+   0,1,1) would outrank ".standfirst__k" (0,1,0) regardless of source order,
+   silently blowing the kicker up to display size. */
+.standfirst p:not(.standfirst__k){
   font-family:var(--font-display);font-weight:200;
   font-size:clamp(1.35rem,2.5vw,2.15rem);line-height:1.08;letter-spacing:-.02em;
   text-wrap:balance;
@@ -899,8 +903,10 @@ html.dc-gated #dc-gate{display:flex}
 
     <aside class="t1-quote">
       <div class="standfirst">
-        <p class="standfirst__k">On this shelf</p>
-        <p>Sixteen of these need <b>no account, no platform and no conversation.</b> Print them at 7:40, teach them at 8:05.</p>
+        <p class="standfirst__k">From blueprint to production floor</p>
+        <p>Bridge the gap between CAD design work and hands-on machining, giving students
+        experience reading industry-standard documentation while building the
+        problem-solving skills that employers demand.</p>
       </div>
     </aside>
 
